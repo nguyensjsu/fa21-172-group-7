@@ -1,2 +1,8 @@
-# Team Project (Replace with your Team Name and Journal)
+# GROUP7
 
+## Running React:
+```
+cd frontend
+npm install
+npm start
+```
