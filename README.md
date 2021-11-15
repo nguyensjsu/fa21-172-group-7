@@ -29,3 +29,32 @@ These journals are located in the <a href="https://github.com/nguyensjsu/fa21-17
   * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/thai-quach.md">Thai Quach</a>
   * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/isla-shi.md">Isla Shi</a>
   * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/justin-zhu.md">Justin Zhu</a>
+
+
+## Project Description - GameGo
+
+GameGo is a platform for purchasing video games, similar to GameStop. 
+
+
+### Functional Requirements
+
+- Video games can be seen and selected for purchase
+- User can purchase a video game with a credit card
+- Transactions are recorded and viewable
+- Game inventory can be accessed and the number of remaining games can be viewed
+
+
+### Technical Requirements
+
+- Frontend 
+    - React JS
+
+- Backend
+    - Spring
+    - MySQL 8.0
+    - RabbitMQ
+    - Kong API Gateway
+    - CyberSource Payment Gateway
+
+- JDK 11
+- Gradle 5.6
