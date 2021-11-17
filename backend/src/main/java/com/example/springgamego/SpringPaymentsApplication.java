@@ -1,4 +1,4 @@
-package com.example.springpayments;
+package com.example.springgamego;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

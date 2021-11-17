@@ -1,4 +1,4 @@
-package com.example.springpayments.payment;
+package com.example.springgamego.payment;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

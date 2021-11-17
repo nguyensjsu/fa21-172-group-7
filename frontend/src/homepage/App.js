@@ -13,7 +13,7 @@ function App() {
       let data = response.data
       if (data && data.test) setPing(data.test)
       else setPing("No connection to Backend, please START spring server")
-    })
+    });
   }
 
   function call_PostSpringAPI(){
@@ -26,9 +26,33 @@ function App() {
     })
   }
 
+  function call_SpringAPI_Kong() {
+    axios.get('http://localhost/api/ping', {headers: {apikey: '2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ'}}).then(response=>{
+      let data = response.data
+      console.log('data', response);
+      if (data && data.test) setPing(data.test)
+      else setPing("No connection to Backend, please START spring server")
+    });
+  }
+
+  function call_PostSpringAPI_Kong(){
+
+    const variable = { title: 'Stuffs to Backend' };
+
+    axios.post('http://localhost/api/ping/test', variable, {headers: {apikey: '2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ'}}).then(response=>{
+      console.log(response)
+      setTest(response.data)
+    })
+  }
+
   useEffect(()=>{
-    call_SpringAPI()
-    call_PostSpringAPI()
+    // For non-Docker
+    // call_SpringAPI()
+    // call_PostSpringAPI()
+
+    // For when Kong is being used (Give it 20 seconds to receive a response)
+    call_SpringAPI_Kong();
+    call_PostSpringAPI_Kong();
   },[])
 
   return (
