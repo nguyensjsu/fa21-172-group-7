@@ -6,6 +6,47 @@
 3. Install node dependencies for React frontend by `cd frontend` and `npm install`. 
 4. You're done!
 
+## Individual Team Member Journals
+These journals will include the following contents as per the project requirements:
+  * A snapshot (point-in-time) image of the Team's Task Board highlighting which "Card" you worked on
+  * A discussion of your accomplishments that week with a list of links to your Code Commits and PRs.
+  * A discussion of the challenges you faced that week and how your resolved those issues.
+
+These journals are located in the <a href="https://github.com/nguyensjsu/fa21-172-group-7/tree/main/journals">journals</a> folder. They can also be accessed with the links below:
+  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/shana-nguyen.md">Shana Nguyen</a>
+  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/thai-quach.md">Thai Quach</a>
+  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/isla-shi.md">Isla Shi</a>
+  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/justin-zhu.md">Justin Zhu</a>
+
+
+## Project Description - GameGo
+
+GameGo is a platform for purchasing video games, similar to GameStop. 
+
+
+### Functional Requirements
+
+- Video games can be seen and selected for purchase
+- User can purchase a video game with a credit card
+- Transactions are recorded and viewable
+- Game inventory can be accessed and the number of remaining games can be viewed
+
+
+### Technical Requirements
+
+- Frontend 
+    - React JS
+
+- Backend
+    - Spring
+    - MySQL 8.0
+    - RabbitMQ
+    - Kong API Gateway
+    - CyberSource Payment Gateway
+
+- JDK 11
+- Gradle 5.6
+
 ## Commands to Run React Frontend
 ```
 cd frontend
@@ -55,44 +96,3 @@ curl localhost/api/ping -H 'apikey:2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ'
 // Make sure the Kong functions in App.js useEffect() are being used, not the non-Docker ones
 npm start
 ```
-
-## Individual Team Member Journals
-These journals will include the following contents as per the project requirements:
-  * A snapshot (point-in-time) image of the Team's Task Board highlighting which "Card" you worked on
-  * A discussion of your accomplishments that week with a list of links to your Code Commits and PRs.
-  * A discussion of the challenges you faced that week and how your resolved those issues.
-
-These journals are located in the <a href="https://github.com/nguyensjsu/fa21-172-group-7/tree/main/journals">journals</a> folder. They can also be accessed with the links below:
-  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/shana-nguyen.md">Shana Nguyen</a>
-  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/thai-quach.md">Thai Quach</a>
-  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/isla-shi.md">Isla Shi</a>
-  * <a href="https://github.com/nguyensjsu/fa21-172-group-7/blob/main/journals/justin-zhu.md">Justin Zhu</a>
-
-
-## Project Description - GameGo
-
-GameGo is a platform for purchasing video games, similar to GameStop. 
-
-
-### Functional Requirements
-
-- Video games can be seen and selected for purchase
-- User can purchase a video game with a credit card
-- Transactions are recorded and viewable
-- Game inventory can be accessed and the number of remaining games can be viewed
-
-
-### Technical Requirements
-
-- Frontend 
-    - React JS
-
-- Backend
-    - Spring
-    - MySQL 8.0
-    - RabbitMQ
-    - Kong API Gateway
-    - CyberSource Payment Gateway
-
-- JDK 11
-- Gradle 5.6
