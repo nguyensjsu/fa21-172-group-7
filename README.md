@@ -18,6 +18,44 @@ cd backend
 gradle bootRun
 ```
 
+## Commands to Get Kong API Working
+```
+cd backend
+gradle bootJar
+// Start Docker Desktop
+docker build -t spring-gamego .
+docker images
+docker network create --driver bridge gamego-network
+docker network ls
+docker network inspect gamego-network
+docker run -d --name spring-gamego --network gamego-network -td spring-gamego
+
+docker run -d --name kong \
+--network=gamego-network \
+-e "KONG_DATABASE=off" \
+-e "KONG_PROXY_ACCESS_LOG=/dev/stdout" \
+-e "KONG_ADMIN_ACCESS_LOG=/dev/stdout" \
+-e "KONG_PROXY_ERROR_LOG=/dev/stderr" \
+-e "KONG_ADMIN_ERROR_LOG=/dev/stderr" \
+-e "KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl" \
+-p 80:8000 \
+-p 443:8443 \
+-p 8001:8001 \
+-p 8444:8444 \
+kong:2.4.0
+
+http :8001/config config=@kong.yaml
+docker exec -it kong kong reload
+
+http localhost/api/ping
+http localhost/api/ping apikey:2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ
+curl localhost/api/ping -H 'apikey:2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ'
+
+// Test it on the React app (Took Kong 20 seconds to respond on Windows)
+// Make sure the Kong functions in App.js useEffect() are being used, not the non-Docker ones
+npm start
+```
+
 ## Individual Team Member Journals
 These journals will include the following contents as per the project requirements:
   * A snapshot (point-in-time) image of the Team's Task Board highlighting which "Card" you worked on
