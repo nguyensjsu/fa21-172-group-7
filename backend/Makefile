@@ -16,4 +16,4 @@ jar:
 
 run: jar
 	echo Starting Spring at:  http://localhost:8080
-	java -jar build/libs/spring-payments-1.0.jar
+	java -jar build/libs/spring-gamego-1.0.jar

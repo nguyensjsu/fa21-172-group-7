@@ -1,4 +1,4 @@
-package com.example.springpayments;
+package com.example.springgamego;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

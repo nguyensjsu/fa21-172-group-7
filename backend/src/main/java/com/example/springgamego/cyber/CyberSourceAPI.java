@@ -1,4 +1,4 @@
-package com.example.springpayments.cyber;
+package com.example.springgamego.cyber;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

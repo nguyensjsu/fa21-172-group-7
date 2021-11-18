@@ -1,4 +1,4 @@
-package com.example.springpayments.cyber;
+package com.example.springgamego.cyber;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;

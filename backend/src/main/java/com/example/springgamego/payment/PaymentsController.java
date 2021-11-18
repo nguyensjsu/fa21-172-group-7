@@ -1,12 +1,12 @@
-package com.example.springpayments.payment;
+package com.example.springgamego.payment;
 
 import javax.validation.Valid;
 
-import com.example.springpayments.cyber.AuthRequest;
-import com.example.springpayments.cyber.AuthResponse;
-import com.example.springpayments.cyber.CaptureRequest;
-import com.example.springpayments.cyber.CaptureResponse;
-import com.example.springpayments.cyber.CyberSourceAPI;
+import com.example.springgamego.cyber.AuthRequest;
+import com.example.springgamego.cyber.AuthResponse;
+import com.example.springgamego.cyber.CaptureRequest;
+import com.example.springgamego.cyber.CaptureResponse;
+import com.example.springgamego.cyber.CyberSourceAPI;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;

@@ -1,4 +1,4 @@
-package com.example.springpayments.cyber;
+package com.example.springgamego.cyber;
 
 public class AuthRequest extends Payload {
 
