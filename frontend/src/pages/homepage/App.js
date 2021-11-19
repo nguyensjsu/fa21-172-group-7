@@ -47,12 +47,14 @@ function App() {
 
   useEffect(()=>{
     // For non-Docker
-    // call_SpringAPI()
-    // call_PostSpringAPI()
+    call_SpringAPI()
+    call_PostSpringAPI()
 
     // For when Kong is being used (Give it 20 seconds to receive a response)
-    call_SpringAPI_Kong();
-    call_PostSpringAPI_Kong();
+    // call_SpringAPI_Kong();
+    // call_PostSpringAPI_Kong();
+
+    // localStorage.clear()
   },[])
 
   return (
