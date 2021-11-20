@@ -20,6 +20,7 @@ class PaymentsCommand {
     private String cardexpyear ;
     private String cardcvv ;
     private String email ;
-    private String notes ;
+
+    private String amount ;
     
 }
