@@ -18,3 +18,8 @@
 #payments-modal-button {
   margin-top: 20px;
 }
+
+#payment-error-msg {
+  margin-left: 20px;
+  color: red;
+}

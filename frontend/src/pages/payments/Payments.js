@@ -12,6 +12,7 @@ export default function Payments() {
   const [cost, setCost] = useState("1.00")
   const [disbutton, setDisButton] = useState(true)
   const [modal, setModel] = useState(false)
+  const [msg, setMsg] = useState("")
   const history = useHistory();
 
   /**
@@ -274,9 +275,13 @@ export default function Payments() {
         amount: cost
       }
       await axios.post(api_host + '/payments/pay', variable, axio_header).then(response => {
-        if (response.data.err == '0') setModel(true)
+        if (response.data.err == '0') {
+          setMsg("")
+          setModel(true)
+        }
         else {
           setModel(false)
+          setMsg("Invalid card, please try a different card")
         }
       })
     }
@@ -284,6 +289,8 @@ export default function Payments() {
 
   return (
     <div className='Payments'>
+      
+      <p id="payment-error-msg" >{msg? msg:""}</p>
 
       <Box
         component="form"
