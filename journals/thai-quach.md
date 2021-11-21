@@ -25,5 +25,6 @@
       * Migrate development variables into a `proxy_env.js` file for better controls
     * Commits
       * <a href="https://github.com/nguyensjsu/fa21-172-group-7/pull/19/commits/d2e579b9278f9fb12e5a0453a816ce8d42334ac1">Frontend and Backend of payment system</a>
+      * <a href="https://github.com/nguyensjsu/fa21-172-group-7/commit/a814aaf41e6b37f245b630ed74aa3f37cd12bc16">Adding error msg for invalid card</a>
 3. Challenges
     * No challenges, just need to have better frontend designs in future PR
