@@ -22,7 +22,7 @@ export default function Game(props) {
 
     return <Redirect to={{
               pathname: "/Payments",
-              properties: { game: props.game}
+              properties: { game: props.game }
             }}
           />
 
