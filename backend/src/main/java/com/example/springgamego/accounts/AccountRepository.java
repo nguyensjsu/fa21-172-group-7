@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Optional;
 
 
-public interface AccountRepository extends JpaRepository<Games, Account>{
+public interface AccountRepository extends JpaRepository<Account, Long>{
 	
     Account findByID(Long ID);
 

@@ -1,6 +1,5 @@
 package com.example.springgamego.accounts;
 
-
 import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +29,7 @@ public class AccountController {
     // (Should be admin only ?)
     @GetMapping("/getUsers")
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<Account> getGames(@Valid @ModelAttribute("command") AccountCommand command, @RequestParam(value="action", required=true) String action, Errors errors, Model model, HttpServletRequest request) {
+    public List<Account> getAccounts(@Valid @ModelAttribute("command") AccountCommand command, @RequestParam(value="action", required=true) String action, Errors errors, Model model, HttpServletRequest request) {
 
         return repository.findAll();
 
@@ -40,12 +39,14 @@ public class AccountController {
     // Create a user
     @PostMapping("/addUser")
     @CrossOrigin(origins = "http://localhost:3000")
-    public boolean getGames(@Valid @ModelAttribute("command") AccountCommand command, @RequestParam(value="action", required=true) String action, Errors errors, Model model, HttpServletRequest request) {
+    public boolean addAccount(@Valid @ModelAttribute("command") AccountCommand command, @RequestParam(value="action", required=true) String action, Errors errors, Model model, HttpServletRequest request) {
 
         Account acct = new Account();
         acct.setUsername(command.getUsername());
         acct.setPassword(command.getPassword());
         acct.setEmail(command.getEmail());
+
+        return true;
 
     }
 

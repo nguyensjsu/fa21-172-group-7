@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-class GamesCommand {
+class AccountCommand {
 
     private String action ;
     private String username ;
