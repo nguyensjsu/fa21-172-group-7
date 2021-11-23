@@ -7,7 +7,7 @@ import { states } from "./var"
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 
-export default function Payments() {
+export default function Payments(props) {
 
   const [cost, setCost] = useState("1.00")
   const [disbutton, setDisButton] = useState(true)
@@ -300,6 +300,8 @@ export default function Payments() {
         noValidate
         autoComplete="off"
       >
+
+        <h1>Complete Your Purchase</h1>
 
         <h3>Personal Info</h3>
 
