@@ -28,9 +28,14 @@ function App() {
   }
 
   useEffect(()=>{
-    // For non-Docker
     call_SpringAPI()
     call_PostSpringAPI()
+    if(!localStorage.getItem('userType')){
+      localStorage.setItem('userType', '');
+      localStorage.setItem('ggToken', '');
+    }
+    // for testing purposes
+    // localStorage.clear();
   },[])
 
   return (

@@ -1,0 +1,13 @@
+.Error {
+  margin-top: 3%;
+}
+
+.error-container {
+  text-align: center;
+  font-size: 32px;
+  padding: 30px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+}
