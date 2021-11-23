@@ -20,3 +20,13 @@ Each week should include:
     * There really weren't any challenges. Just waiting on the next few tasks to work on now.
 
 ## Week 2 (Nov 17 - Nov 24)
+1. Snapshot
+![jz-2](https://user-images.githubusercontent.com/25803515/142984488-b34bb3c1-7e35-4e49-ac15-6f5b98335735.png)
+2. Accomplishments
+   * This week, I had four main tasks. One task was to continue looking into Kong API with our REST APIs. With Kong API, this required me to work with the backend files and Docker image configurations. As a result, this was my second task: to rename the backend files and to set up the files properly to create the Docker images. I was able to complete both of these tasks and Kong API is now fully connected to our backend. My third task was to set up the frontend routing for our team to begin frontend development of the pages. Essentially, I am setting up all the routes (/login, /register, /browse) and creating dummy pages to make it easier for everyone in our team to begin frontend development. I was able to accomplish this task as well. My last task turned into quite a big one. It was originally to implement the UI of user login/logout. But, I ended up implementing the entire user login/logout functionality. In other words, instead of only working on the frontend, I worked on both the frontend and the backend. Everything seemed to have worked properly on H2 database, and it is still in process of a PR, so we will see if there are any bugs that come up as my team checks it.
+   * Notable PRs
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/16'>Kong Integration and Backend File Setup</a>
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/17'>React Page Routing</a>
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/21'>User Register/Login/Logout</a>
+3. Challenges
+   * Once again, nothing too challenging really. But there were two interesting topics of note to talk about. One was during my implementation of Kong API into our app. While doing this, our frontend application required additional setup from Kong in order to communicate to it. In the console, the error had something to do with cors. In the end, I had to make use of the cors plugin in Kong API to get it working. It was a cool experience. Another topic of note was during development of Login. Register/Login requires passwords. Obviously it is insecure to just send the plaintext password over the Internet. So I had to look into encryption/hashing methods. In the end, I stumbled upon bcrypt.js, which allowed me to hash my passwords and also verify that the plaintext matched the hashed password saved in the database.
