@@ -43,7 +43,7 @@ import TableRow from '@mui/material/TableRow';
 
 /**
  * Props:
- * - columns, rows (format like above)
+ * - columns, rows (format like above) and title
  */ 
 export default function ColumnGroupingTable(props) {
   const [page, setPage] = React.useState(0);
@@ -65,7 +65,7 @@ export default function ColumnGroupingTable(props) {
           <TableHead>
             <TableRow>
               <TableCell align="center" colSpan={props.columns.length}>
-                GameGo Games
+                {props.title}
               </TableCell>
             </TableRow>
             <TableRow>

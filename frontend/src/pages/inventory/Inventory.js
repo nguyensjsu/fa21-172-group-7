@@ -76,7 +76,7 @@ export default function Inventory() {
   return(
     <div className='Inventory'>
       <h1>Inventory</h1>
-        <ColumnGroupingTable columns={columns} rows={rows}/>
+        <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Games" />
     </div>
   );
 }
