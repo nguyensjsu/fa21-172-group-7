@@ -8,6 +8,9 @@ import { useHistory } from 'react-router';
 
 const bcrypt = require('bcryptjs');
 
+import { TextField, Box, Button, Modal, Typography } from '@mui/material'
+
+
 export default function Login() {
   // State variables
   const [email, setEmail] = useState('');
