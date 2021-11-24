@@ -34,6 +34,12 @@ public class UserController {
     return null;
   }
 
+  @GetMapping("/user")
+  @CrossOrigin(origins = "http://localhost:3000")
+  List<User> all(HttpServletRequest request) {
+    return repository.findAll();
+  }
+
   @PostMapping("/user/register")
   @CrossOrigin(origins = "http://localhost:3000")
   Map<String, String> register(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
