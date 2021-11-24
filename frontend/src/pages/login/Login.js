@@ -1,15 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import TextField from '@mui/material/TextField';
 import AlertCustom from '../../components/AlertCustom';
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env';
 import './Login.css';
 import { useHistory } from 'react-router';
+import TextField from '@mui/material/TextField';
 
 const bcrypt = require('bcryptjs');
-
-import { TextField, Box, Button, Modal, Typography } from '@mui/material'
-
 
 export default function Login() {
   // State variables
