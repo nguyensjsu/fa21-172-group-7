@@ -8,7 +8,7 @@ Each week should include:
 
 ## Week 1 (Nov 12 - Nov 17)
 
-![](images/sn-1.png)
+![Board Week 1](images/sn-1.png)
 
 ### Accomplishments:
 - [Functional & Technical Requirements PR](URL "https://github.com/nguyensjsu/fa21-172-group-7/pull/8")
@@ -21,6 +21,8 @@ Each week should include:
 
 ## Week 2 (Nov 18 - Nov 23)
 
+![Board Week 2](images/sn-2.png)
+
 ### Accomplishments:
 1. [Front Office for users (actual store front)](URL "https://github.com/nguyensjsu/fa21-172-group-7/issues/11")
 - Set up game browsing view and enabled adding to cart
@@ -28,16 +30,31 @@ Each week should include:
 
 2. [Back Office for admin/help desk/inventory](https://github.com/nguyensjsu/fa21-172-group-7/issues/12)
 - Inventory
-	- Can view a list of games from the database and their information
+	- Can view a list of games from the database and their information in table format
 - Transactions
-	- Can view a list of payments from the database and their details
+	- Can view a list of payments from the database and their details in table format
+- Accounts
+	- Set up table formatting with temporary placeholder data
 
+
+- [Set up Games, Inventory, Transactions, and Accounts PR](https://github.com/nguyensjsu/fa21-172-group-7/pull/23) addresses #1 and 2 mentioned above
 
 
 ### Challenges:
-- Had difficulty figuring out how to set up the API methods and using Kong and Docker
-- Had to learn how to use async functions
+- Had difficulty figuring out how to set up the API methods and using Kong and Docker; I looked at previous assignments and looked up Lombok annotation meanings
+- Had to learn how to use async functions; I looked up tutorials and examples online to learn more about how they work
 - Had to read up on Material UI docs in order to use their tables
-- Had to learn how to use localstorage
+- Had to learn how to use localstorage through online forums as well as their documentation
+
+
+
+## Week 3 (Nov 24 - Nov 30)
+
+![Board Week 3](images/sn-3.png)
+
+### Accomplishments:
+
+
+### Challenges:
 
 
