@@ -14,25 +14,6 @@ export default function Transactions() {
   // Function that is called when page is changed
   useEffect(()=>{
     console.log("View in browser's developer console!");
-
-    // const dbPayments = axios.get(api_host+'/payments', axio_header).then(response=>{
-    //   games = response.data
-    //   console.log('data', response);
-    // });
-
-    // dbPayments.forEach( (payment) => {
-    //   rows.push({
-    //     firstname: payment.getFirstname(), 
-    //     lastname: payment.getLastname(), 
-    //     email: payment.getEmail(), 
-    //     amount: payment.getAmount() 
-    //   })
-    // })
-
-  });
-
-  useEffect(()=>{
-    console.log("View in browser's developer console!");
     getPayments();
   }, []);
 
@@ -47,7 +28,7 @@ export default function Transactions() {
           firstname: payment.firstname,
           lastname: payment.lastname,
           email: payment.email,
-          amount: payment.amount
+          amount: "$" + payment.amount
         })
       })
       setRows(tableRows);
@@ -57,7 +38,7 @@ export default function Transactions() {
   }
 
 
-  // Add game to Payments
+  // ** ADD GAME TO PAYMENTS
   const columns = [
     {
       id: 'firstname',
@@ -85,20 +66,6 @@ export default function Transactions() {
     },
   ]
 
-  // const rows = [
-  //   {
-  //     firstname: 'Bob',
-  //     lastname: 'Dylan',
-  //     email: 'bobd@gmail.com',
-  //     amount: '55',
-  //   },
-  //   {
-  //     firstname: 'Duke',
-  //     lastname: 'Ellington',
-  //     email: 'dukee@gmail.com',
-  //     amount: '30',
-  //   },
-  // ]
 
   return(
     <div className='Transactions'>

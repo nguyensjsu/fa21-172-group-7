@@ -27,7 +27,7 @@ export default function Inventory() {
         tableRows.push({
           name: game.name,
           description: game.description,
-          price: game.price,
+          price: "$" + game.price,
           inventoryCount: game.inventoryCount
         })
       })

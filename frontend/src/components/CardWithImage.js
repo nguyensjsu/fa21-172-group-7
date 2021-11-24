@@ -8,9 +8,7 @@ import Typography from '@mui/material/Typography';
 
 /**
  * Props:
- * - imagePath, title, text, buttonLabel
- * 
- * Button currently doesn't do anything, so would need a onClick prop?
+ * - imagePath, title, text, buttonLabel, buttonAction
  */ 
 export default function CardWithImage(props) {
 
@@ -33,7 +31,7 @@ export default function CardWithImage(props) {
       </CardContent>
       { props.buttonLabel !== undefined &&
       	<CardActions>
-	      <Button size="small">{props.buttonLabel}</Button>
+	      <Button size="small" onClick={props.buttonAction}>{props.buttonLabel}</Button>
 	    </CardActions>
       }
     </Card>

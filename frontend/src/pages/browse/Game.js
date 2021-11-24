@@ -10,6 +10,7 @@ import {Redirect} from 'react-router-dom';
 export default function Game(props) {
   // State variables
   const [example, setExample] = useState('EX'); // pass in logged in and non-logged in state in props from Browse?
+  const [cartState, setCartState] = useState('Add To Cart');
 
   // Function that is called when page is changed
   useEffect(()=>{
@@ -18,30 +19,28 @@ export default function Game(props) {
 
 
   // THIS IS NOT WORKING YET
-  function purchase() {
-    console.log("REDIRECT TO PAYMENTS");
+  const addToCart = () => {
 
-    return <Redirect to={{
-              pathname: "/Payments",
-              properties: { game: props.game }
-            }}
-          />
 
-    // Source if we want to pass game into the URL: https://stackoverflow.com/questions/48233182/how-to-send-props-to-reactjs-when-redirect
+    if (cartState === 'Add To Cart') {
+      localStorage.setItem('gameID', props.game.ID);
+      localStorage.setItem('gameName', props.game.name);
+      localStorage.setItem('description', props.game.description);
+      localStorage.setItem('price', props.game.price);
+      props.parentCallback(props.game);
+      setCartState('Remove From Cart');
+      console.log("local storage cart set with = ", props.game);
+    }
+  
   }
 
 
-  /**
-   * Change to this when using backend database:
-   * <h1>{props.game.getName()}</h1>
-      <p>{props.game.getDescription()}</p>
-      <p>{props.game.getPrice()}</p>
-   */ 
   return(
       <CardWithImage 
         title={props.game.name + " ($" + props.game.price + ")"} 
         text={props.game.description} 
-        buttonLabel="Purchase" 
-        onClick className="Game" />
+        buttonLabel={cartState} 
+        buttonAction={addToCart}
+        className="Game" />
   );
 }
