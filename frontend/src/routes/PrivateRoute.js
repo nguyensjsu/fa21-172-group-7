@@ -15,7 +15,7 @@ export default function PrivateRoute({
         localStorage.getItem('userType') === ('user' || 'admin') ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/error" />
+          <Redirect to="/login" />
         )
       }
     />
