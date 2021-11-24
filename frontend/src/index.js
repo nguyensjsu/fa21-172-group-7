@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 // Route Types
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
-// import AdminRoute from './routes/AdminRoute';
+import AdminRoute from './routes/AdminRoute';
 
 // Pages
 import App from './pages/homepage/App';
@@ -31,10 +31,10 @@ const routing = (
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/browse" component={Browse} />
-        <Route exact path="/payments" component={Payments} />
-        <Route exact path="/inventory" component={Inventory} />
-        <Route exact path="/transactions" component={Transactions} />
-        <Route exact path="/accounts" component={Accounts} />
+        <PrivateRoute exact path="/payments" component={Payments} />
+        <AdminRoute exact path="/inventory" component={Inventory} />
+        <AdminRoute exact path="/transactions" component={Transactions} />
+        <AdminRoute exact path="/accounts" component={Accounts} />
         <Route exact path="/error" component={Error} />
         <PublicRoute exact path="/register" component={Register} />
         <PublicRoute exact path="/login" component={Login} />

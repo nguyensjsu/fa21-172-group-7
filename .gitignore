@@ -1,6 +1,6 @@
 node_modules/
 build/
 .vscode
-.gradle
+.gradle/
 .DS_Store
 bin/

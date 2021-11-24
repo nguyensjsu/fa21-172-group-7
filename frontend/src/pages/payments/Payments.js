@@ -7,9 +7,11 @@ import { states } from "./var"
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 
-export default function Payments() {
+import ShoppingCart from './ShoppingCart.js';
 
-  const [cost, setCost] = useState("1.00")
+export default function Payments(props) {
+
+  const [cost, setCost] = useState(localStorage.getItem('price') == null ? "0.00" : localStorage.getItem('price'))
   const [disbutton, setDisButton] = useState(true)
   const [modal, setModel] = useState(false)
   const [msg, setMsg] = useState("")
@@ -289,6 +291,8 @@ export default function Payments() {
 
   return (
     <div className='Payments'>
+
+      <ShoppingCart />
       
       <p id="payment-error-msg" >{msg? msg:""}</p>
 
@@ -300,6 +304,8 @@ export default function Payments() {
         noValidate
         autoComplete="off"
       >
+
+        <h1>Complete Your Purchase</h1>
 
         <h3>Personal Info</h3>
 
