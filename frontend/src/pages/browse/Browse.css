@@ -1,4 +1,9 @@
 .Browse {
   border: 1px solid black;
-  padding: 20px
+  padding: 20px;
+}
+
+.game {
+  display: inline-block;
+  margin: 20px;
 }

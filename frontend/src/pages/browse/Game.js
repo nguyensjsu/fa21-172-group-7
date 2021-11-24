@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Game.css';
+import CardWithImage from '../../components/CardWithImage.js';
 
 import '../payments/Payments.js';
 
@@ -37,11 +38,10 @@ export default function Game(props) {
       <p>{props.game.getPrice()}</p>
    */ 
   return(
-    <div className='Game'>
-      <h1>{props.game.name}</h1>
-      <p>{props.game.description}</p>
-      <p>{props.game.price}</p>
-      <Button onClick={purchase} variant="contained">Purchase</Button>
-    </div>
+      <CardWithImage 
+        title={props.game.name + " ($" + props.game.price + ")"} 
+        text={props.game.description} 
+        buttonLabel="Purchase" 
+        onClick className="Game" />
   );
 }
