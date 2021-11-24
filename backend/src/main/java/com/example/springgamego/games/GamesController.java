@@ -55,16 +55,7 @@ public class GamesController {
             repository.save(game2);
         }
 
-        HashMap<String, String> map = new HashMap<>();
-
         List<Games> gamesList = repository.findAll();
-        for (Games game : gamesList) {
-
-            map.put("game", game.getName());
-            map.put("description", game.getDescription());
-            map.put("price", game.getPrice());
-            map.put("inventoryCount", game.getInventoryCount());
-        }
 
         return gamesList;
 

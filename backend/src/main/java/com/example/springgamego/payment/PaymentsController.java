@@ -35,9 +35,15 @@ public class PaymentsController {
     // Get list of payments
     @GetMapping("/payments")
     @CrossOrigin(origins = "http://localhost:3000")
-    List<Payments> getPayments(@Valid @RequestBody PaymentsCommand command, Errors errors, Model model, HttpServletRequest request) {
+    public List<Payments> getPayments(@Valid @ModelAttribute("command") PaymentsCommand command, Model model, HttpServletRequest request) {
 
-        return repository.findAll();
+        log.info( "Model: " + model ) ;
+        log.info( "Request: " + request ) ;
+        log.info( "Command: " + command ) ;
+
+        List<Payments> paymentsList = repository.findAll();
+
+        return paymentsList;
 
     }
 

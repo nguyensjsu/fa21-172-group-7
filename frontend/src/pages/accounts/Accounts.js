@@ -8,11 +8,17 @@ import { api_host, axio_header } from '../proxy_env'
 export default function Accounts() {
   // State variables
   const [example, setExample] = useState('EX');
-  const [accounts, setAccounts] = useState('EX');
+  const [users, setUsers] = useState([]);
+
+  // ** UNCOMMENT AFTER User API is made
+  // const [rows, setRows] = useState([]);
+
 
   // Function that is called when page is changed
   useEffect(()=>{
     console.log("View in browser's developer console!");
+
+    getUsers();
 
     // const dbAccounts = axios.get(api_host+'/getUsers', axio_header).then(response=>{
     //   accounts = response.data
@@ -27,6 +33,34 @@ export default function Accounts() {
     // })
 
   });
+
+  useEffect(()=>{
+    console.log("View in browser's developer console!");
+
+    // ** UNCOMMENT AFTER User API is made
+    // getUsers();
+  }, []);
+
+
+  // ** FIX AFTER User API is made
+  const getUsers = async() => {
+    try {
+      const response = await axios.get(api_host+'/users', axio_header);
+      setUsers(response.data);
+      let tableRows = []
+      response.data.map((user) => {
+        tableRows.push({
+          username: user.username,
+          email: user.email,
+        })
+      })
+      // ** UNCOMMENT AFTER User API is made
+      // setRows(tableRows);
+    } catch (error) {
+      console.log("Couldn't get users");
+    }
+  }
+
 
   const columns = [
     {
@@ -43,6 +77,7 @@ export default function Accounts() {
     },
   ]
 
+  // ** DELETE AFTER User API is made
   const rows = [
     {
       username:"userone",

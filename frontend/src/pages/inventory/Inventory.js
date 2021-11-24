@@ -7,29 +7,36 @@ import { api_host, axio_header } from '../proxy_env'
 
 export default function Inventory() {
   // State variables
-  const [example, setExample] = useState('EX');
-  const [games, setGames] = useState('EX');
+  const [games, setGames] = useState([]);
+  const [rows, setRows] = useState([]);
 
 
   // Function that is called when page is changed
   useEffect(()=>{
     console.log("View in browser's developer console!");
+    getGames();
+  }, []);
 
-    // const dbGames = axios.get(api_host+'/games', axio_header).then(response=>{
-    //   games = response.data
-    //   console.log('data', response);
-    // });
 
-    // dbGames.forEach( (game) => {
-    //   rows.push({
-    //     name: game.getName(), 
-    //     description: game.getDescription(), 
-    //     price: game.getPrice(), 
-    //     inventoryCount: game.getInventoryCount() 
-    //   })
-    // })
+  const getGames = async() => {
+    try {
+      const response = await axios.get(api_host+'/games', axio_header);
+      setGames(response.data);
+      let tableRows = []
+      response.data.map((game) => {
+        tableRows.push({
+          name: game.name,
+          description: game.description,
+          price: game.price,
+          inventoryCount: game.inventoryCount
+        })
+      })
+      setRows(tableRows);
+    } catch (error) {
+      console.log("Couldn't fetch games :(");
+    }
+  }
 
-  });
 
   const columns = [
     {
@@ -58,20 +65,6 @@ export default function Inventory() {
     }
   ]
 
-  const rows = [
-    {
-      name:"Kingdom Hearts",
-      description:"RPG",
-      price:"30",
-      inventoryCount:"5"
-    },
-    {
-      name:"Kingdom Hearts 2",
-      description:"RPG second game",
-      price:"40",
-      inventoryCount:"5"
-    }
-  ]
 
   return(
     <div className='Inventory'>

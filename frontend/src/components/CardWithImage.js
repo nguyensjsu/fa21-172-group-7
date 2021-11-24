@@ -9,11 +9,13 @@ import Typography from '@mui/material/Typography';
 /**
  * Props:
  * - imagePath, title, text, buttonLabel
+ * 
+ * Button currently doesn't do anything, so would need a onClick prop?
  */ 
 export default function CardWithImage(props) {
 
   return (
-    <Card sx={{ maxWidth: 1000 }}>
+    <Card sx={{ maxWidth: 345, maxHeight: 700 }}>
       { props.imagePath !== undefined &&
       	<CardMedia
 	       component="img"

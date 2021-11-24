@@ -10,13 +10,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 
-
-
-
 export default function Browse() {
   // State variables
   const [example, setExample] = useState('EX'); // set logged in and non-logged in state?
-  const [error, setError] = useState('');
   const [games, setGames] = useState([]);
 
 
@@ -38,21 +34,11 @@ export default function Browse() {
     try {
       const response = await axios.get(api_host+'/games', axio_header);
       setGames(response.data);
-      console.log('games', games);
     } catch (error) {
-      setError("Couldn't fetch games :(");
+      console.log("Couldn't fetch games :(");
     }
   }
 
-  // <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-  //       {games.map( (game,index) => (
-  //         <Grid item xs={2}>
-  //           <Item key={index}>
-  //             <Game game={game} />
-  //           </Item>
-  //         </Grid>
-  //       ))}
-  //     </Grid>
 
 
   return(
