@@ -1,4 +1,30 @@
 .Register {
-  border: 1px solid black;
-  padding: 20px
+  margin-top: 5%;
+}
+
+.register-label {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.register-container {
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.register-btn {
+  margin-top: 30px;
+  padding: 10px;
+  width: 100%;
+  background-color: light-grey;
+  color: black
+}
+
+.spacer {
+  margin: 30px auto;
 }

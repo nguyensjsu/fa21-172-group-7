@@ -27,8 +27,20 @@ function App() {
     })
   }
 
+  function call_UserAPI() {
+    axios.get(api_host+'/user', axio_header).then(response=>{
+      let data = response.data;
+      console.log('user data', response);
+      if(data.length <= 0) localStorage.clear()
+      if(!localStorage.getItem('userType')){
+        localStorage.setItem('userType', '');
+        localStorage.setItem('ggToken', '');
+      }
+    })
+  }
+
   useEffect(()=>{
-    // For non-Docker
+    call_UserAPI()
     call_SpringAPI()
     call_PostSpringAPI()
   },[])

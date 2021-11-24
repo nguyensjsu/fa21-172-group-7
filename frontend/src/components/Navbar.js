@@ -12,12 +12,10 @@ export default class Navbar extends Component {
   }
 
   handleSwitch = () => {
-    if(localStorage.getItem('userType')==='user'){
+    if(this.state.userType === 'user'){
       this.setState({userType: 'admin'});
-      localStorage.setItem('userType', 'admin');
     } else {
       this.setState({userType: 'user'});
-      localStorage.setItem('userType', 'user');
     }   
   }
 
