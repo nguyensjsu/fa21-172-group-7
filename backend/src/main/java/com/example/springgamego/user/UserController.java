@@ -24,6 +24,16 @@ public class UserController {
     this.repository = repository;
   }
 
+  User findByEmail(String email) {
+    List<User> users = repository.findAll();
+    for(User user : users) {
+      if(user.getEmail().equals(email)){
+        return user;
+      }
+    }
+    return null;
+  }
+
   @PostMapping("/user/register")
   @CrossOrigin(origins = "http://localhost:3000")
   Map<String, String> register(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
@@ -49,7 +59,7 @@ public class UserController {
     log.info( "Command: " + command ) ;
     
     HashMap<String, String> returns = new HashMap<>();
-    User user = repository.findByEmail(command.getEmail());
+    User user = findByEmail(command.getEmail());
     if(user == null) {
       returns.put("error", "true");
       return returns;
@@ -68,7 +78,7 @@ public class UserController {
     log.info( "Command: " + command ) ;
     
     HashMap<String, String> returns = new HashMap<>();
-    User user = repository.findByEmail(command.getEmail());
+    User user = findByEmail(command.getEmail());
     if(user == null) {
       returns.put("error", "true");
       return returns;

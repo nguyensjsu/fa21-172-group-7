@@ -11,14 +11,14 @@ const bcrypt = require('bcryptjs');
 export default function Register() {
   // State variables
   const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState(false)
-  const [emailHelper, setEmailHelper] = useState('')
+  const [emailError, setEmailError] = useState(false);
+  const [emailHelper, setEmailHelper] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordError, setPasswordError] = useState(false)
-  const [passwordHelper, setPasswordHelper] = useState('')
-  const [open, setOpen] = useState(false)
-  const [errorMsg, setErrorMsg]= useState('');
-
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordHelper, setPasswordHelper] = useState('');
+  const [open, setOpen] = useState(false);
+  const [alertMsg, setAlertMsg]= useState('');
+  const [severity, setSeverity] = useState('info');
   const history = useHistory();
 
   // Function that is called when page is changed
@@ -67,15 +67,21 @@ export default function Register() {
         email, password: hash
       }
       try {
-        const res = await axios.post(api_host + '/user/register', payload, axio_header);
-        console.log('here')
-        if(res.data.error === 'false'){ 
-          console.log('here')
-          history.push('/login');
-          window.location.reload();
-        }
+        setSeverity('info')
+        setAlertMsg('Please wait. System processing...');
+        setOpen(true);
+        setTimeout(async ()=>{
+          const res = await axios.post(api_host + '/user/register', payload, axio_header);
+          console.log('here', res)
+          if(res.data.error === 'false'){ 
+            console.log('here')
+            history.push('/login');
+            window.location.reload();
+          }
+        }, 1100);
       } catch (error) {
-        setErrorMsg('Backend error occurred! Check your database.');
+        setSeverity('error')
+        setAlertMsg('Backend error occurred! Check your database.');
         setOpen(true);
         return;
       }
@@ -92,8 +98,8 @@ export default function Register() {
           style={{marginBottom: '16px'}}
           open={open}
           setOpen={setOpen}
-          severity={'error'}
-          message={errorMsg}
+          severity={severity}
+          message={alertMsg}
         />
         <form onSubmit={handleSubmit}>
           <TextField

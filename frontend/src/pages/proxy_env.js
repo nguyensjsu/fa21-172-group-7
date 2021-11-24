@@ -4,7 +4,7 @@
  * true = spring 8080 server
  * false = kong /api/...
  */
-var dev = true
+var dev = false
 
 
 

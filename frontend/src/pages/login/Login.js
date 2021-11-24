@@ -13,7 +13,8 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
-  const [errorMsg, setErrorMsg]= useState('');
+  const [alertMsg, setAlertMsg]= useState('');
+  const [severity, setSeverity] = useState('info');
   const history = useHistory();
 
   // Function that is called when page is changed
@@ -45,12 +46,14 @@ export default function Login() {
           }
         }
       } catch (error) {
-        setErrorMsg('Backend error occurred! Check your database.');
+        setSeverity('error');
+        setAlertMsg('Backend error occurred! Check your database.');
         setOpen(hasError);
         return;
       }
     }
-    setErrorMsg('Invalid credentials. Try again!');
+    setSeverity('error');
+    setAlertMsg('Invalid credentials. Try again!');
     setOpen(hasError);
   }
 
@@ -77,8 +80,8 @@ export default function Login() {
           style={{marginBottom: '16px'}}
           open={open}
           setOpen={setOpen}
-          severity={'error'}
-          message={errorMsg}
+          severity={severity}
+          message={alertMsg}
         />
         <form onSubmit={handleSubmit}>
           <TextField

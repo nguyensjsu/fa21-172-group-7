@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "frontend": "cd frontend && npm start",
+    "docker-kong": "docker ps && npm run stop-images -s; npm run rm-images -s; npm run build-image && npm run create-network && npm run spring-gamego && npm run kong && npm run kong2 && npm run echo-done",
+    "docker-kong-sql": "docker ps && npm run stop-images -s; npm run rm-images -s; npm run build-image && npm run create-network && npm run sql && npm run spring-gamego && npm run kong && npm run kong2 && npm run echo-done",
+    "sql": "docker run -d --name mysql --network gamego-network -td -p 3306:3306 -e MYSQL_ROOT_PASSWORD=welcome mysql:8.0 && npm run sql-bash-echo && docker exec -it mysql bash",
+    "sql-bash-echo": "echo '\\e[95mRun the following commands in the MySQL Bash\n\\e[39m(Password is: welcome)\n\nmysql --password\ncreate database cmpe172;\nuse cmpe172;\ncreate user \"admin\"@\"%\" identified by \"welcome\";\ngrant all on cmpe172.* to \"admin\"@\"%\";\nexit\nexit\n'",
+    "stop-images": "echo '\\e[95m\nStopping spring-gamego, kong, and mysql images...\\e[39m' && docker stop spring-gamego; docker stop kong; docker stop mysql",
+    "rm-images": "echo '\\e[95m\nRemoving spring-gamego, kong, and mysql images...\\e[39m' && docker rm spring-gamego; docker rm kong; docker rm mysql",
+    "build-image": "cd backend && gradle clean && gradle bootJar && docker build -t spring-gamego . && docker images",
+    "create-network": "docker network create --driver bridge gamego-network; docker network ls",
+    "spring-gamego": "docker run -d --name spring-gamego --network gamego-network -td spring-gamego",
+    "kong": "docker run -d --name kong --network=gamego-network -e 'KONG_DATABASE=off' -e 'KONG_PROXY_ACCESS_LOG=/dev/stdout' -e 'KONG_ADMIN_ACCESS_LOG=/dev/stdout' -e 'KONG_PROXY_ERROR_LOG=/dev/stderr' -e 'KONG_ADMIN_ERROR_LOG=/dev/stderr' -e 'KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl' -p 80:8000 -p 443:8443 -p 8001:8001 -p 8444:8444 kong:2.4.0",
+    "kong2": "sleep 5 && cd backend && http :8001/config config=@kong.yaml && docker exec -it kong kong reload && echo '\\e[95mPinging localhost/api/ping with httpie...\\e[39m\n' && http localhost/api/ping apikey:2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ",
+    "echo-done": "echo \"\\e[95mYou're all set. Happy coding!\"\n"
+  }
+}
