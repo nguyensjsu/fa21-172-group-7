@@ -295,11 +295,12 @@ export default function Payments(props) {
   return (
     <div className='Payments'>
 
-      <ShoppingCart />
+      <ShoppingCart/>
       
       <p id="payment-error-msg" >{msg? msg:""}</p>
 
       <Box
+        m={5} pt={3}
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 3, width: '20vw' },
