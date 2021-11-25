@@ -6,9 +6,7 @@
  */
 var dev = false
 
-
-
-var kong_host = "http://localhost"
+var kong_host = process.env.REACT_APP_KONG_IP || "http://localhost"
 var spring_host = "http://localhost:8080"
 
 var api_host =  dev? spring_host : kong_host+"/api"
