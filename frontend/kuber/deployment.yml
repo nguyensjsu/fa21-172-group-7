@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-gamego-frontend-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      name: spring-gamego-frontend
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        name: spring-gamego-frontend
+    spec:
+      containers:
+      - name: spring-gamego-frontend
+        image: thaiquachsjsu/cmpe1722
+        stdin: true
+        tty: true
+        ports:
+        - containerPort: 3000
+        # env:
+        # - name: BACKEND_IP
+        #   value: "35.225.161.177" #Kong GKE public address
+        # - name: BACKEND_PORT
+        #   value: "80"
+

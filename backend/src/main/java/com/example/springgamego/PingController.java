@@ -31,14 +31,14 @@ public class PingController {
     }
 
     @GetMapping("/ping")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public Ping ping() {
         return new Ping("Backend API alive!");
     }
 
     // Json Test response
     @PostMapping("/ping/test")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     Map<String, String> testPost(@Valid @RequestBody TestCommand command, Errors errors, Model model, HttpServletRequest request) {
         
         log.info( "Model: " + model ) ;

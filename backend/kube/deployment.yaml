@@ -20,4 +20,6 @@ spec:
         image: thaiquachsjsu/cmpe172 
         ports:
         - containerPort: 8080
-
+        env:
+            - name: MYSQL_HOST
+              value: "10.107.192.4" #Private VPC if you are deploying to GKE
