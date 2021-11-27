@@ -154,7 +154,7 @@ kubectl apply -f kong-consumer.yaml
 kubectl apply -f kong-credentials.yaml
 ```
 
-### ReactJS
+### GKE ReactJS
 Has the same steps as deploying Backend-Spring:
 1. In `package.json`, change proxy to the `Backend-IP:Port`
    
