@@ -4,15 +4,14 @@
  * true = spring 8080 server
  * false = kong /api/...
  */
-var dev = false
+var kong = false
 
-var kong_host = process.env.REACT_APP_KONG_IP || "http://localhost"
-var spring_host = "http://localhost:8080"
+var spring_prefix = ""
 
-var api_host =  dev? spring_host : kong_host+"/api"
+var api_host =  kong? spring_prefix : "/api"
 
 var axio_header = {headers: { apikey: '2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ' }}
 
 module.exports = {
-    api_host, axio_header, dev
+    api_host, axio_header
 }

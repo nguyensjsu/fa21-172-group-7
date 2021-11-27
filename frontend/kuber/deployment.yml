@@ -22,7 +22,9 @@ spec:
         tty: true
         ports:
         - containerPort: 3000
-        env:
-        - name: REACT_APP_KONG_IP
-          value: "http://35.192.70.218" #Kong GKE public address
+        # env:
+        # - name: BACKEND_IP
+        #   value: "35.225.161.177" #Kong GKE public address
+        # - name: BACKEND_PORT
+        #   value: "80"
 
