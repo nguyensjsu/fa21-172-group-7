@@ -34,12 +34,17 @@
 ![](./images/tq-3.png)
 2. Accomplishments
     * Tasks  
+      * Merge and resolves conflicts from other branches into main
       * Setup and deploy on GKE
       * Setup GCP Cloud SQL and connect with backend app
       * Deploy Spring-API backend to GKE
       * Deploy ReactJS Frontend to GKE
     * Commits
-      * <a href="https://github.com/nguyensjsu/fa21-172-group-7/pull/19/commits/d2e579b9278f9fb12e5a0453a816ce8d42334ac1">Frontend and Backend of payment system</a>
-      * <a href="https://github.com/nguyensjsu/fa21-172-group-7/commit/a814aaf41e6b37f245b630ed74aa3f37cd12bc16">Adding error msg for invalid card</a>
+      * [Merge and resolves conflicts from other branches](https://github.com/nguyensjsu/fa21-172-group-7/commit/80952ea6a2ebbf3da378d068911690f18400281f)
+      * [Docker and GKE files for Backend-API and Kong intergration](https://github.com/nguyensjsu/fa21-172-group-7/commit/9506e5c3ec8b0f3d3dc406f4f1c923e7b013a89a)
+      * [Docker and GKE files for ReactJS frontend](https://github.com/nguyensjsu/fa21-172-group-7/commit/e0d60a763b2de1c248fade71b5c63bee41fbb615)
+      * [Resolves CORS issues with React Proxy](https://github.com/nguyensjsu/fa21-172-group-7/commit/a25a427fc59ccb7b4800cbc49df7a290d0c41bfb)
 3. Challenges
-    * No challenges, just need to have better frontend designs in future PR
+    * During deployment of GKE, React-cluster and Spring-Kong-cluster ran into CORS rejections
+    * I asked for help in class Slack, professor Paul Nguyen sent some resoucres and I was able to resolve the cors issue
+    * Solution: Proxy React's origin (in `package.json`) to Backend-Cluster IP
