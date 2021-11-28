@@ -34,7 +34,7 @@ public class PaymentsController {
 
     // Get list of payments
     @GetMapping("/payments")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public List<Payments> getPayments(@Valid @ModelAttribute("command") PaymentsCommand command, Model model, HttpServletRequest request) {
 
         log.info( "Model: " + model ) ;
@@ -50,7 +50,7 @@ public class PaymentsController {
 
     // Json Test response
     @PostMapping("/payments/pay")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     Map<String, String> testPost(@Valid @RequestBody PaymentsCommand command, Errors errors, Model model, HttpServletRequest request) {
         
         log.info( "Model: " + model ) ;

@@ -35,13 +35,13 @@ public class UserController {
   }
 
   @GetMapping("/user")
-  @CrossOrigin(origins = "http://localhost:3000")
+  @CrossOrigin(origins = "*")
   List<User> all(HttpServletRequest request) {
     return repository.findAll();
   }
 
   @PostMapping("/user/register")
-  @CrossOrigin(origins = "http://localhost:3000")
+  @CrossOrigin(origins = "*")
   Map<String, String> register(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
     log.info( "Model: " + model ) ;
     log.info( "Request: " + request ) ;
@@ -58,7 +58,7 @@ public class UserController {
   }
 
   @PostMapping("/user/login")
-  @CrossOrigin(origins = "http://localhost:3000")
+  @CrossOrigin(origins = "*")
   Map<String, String> login(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
     log.info( "Model: " + model ) ;
     log.info( "Request: " + request ) ;
@@ -77,7 +77,7 @@ public class UserController {
   }
 
   @PostMapping("/user/login/authenticateUser")
-  @CrossOrigin(origins = "http://localhost:3000")
+  @CrossOrigin(origins = "*")
   Map<String, String> authenticateUser(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
     log.info( "Model: " + model ) ;
     log.info( "Request: " + request ) ;

@@ -28,7 +28,7 @@ public class GamesController {
     }
 
     @GetMapping("/games")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     public List<Games> getGames(@Valid @ModelAttribute("command") GamesCommand command, Model model, HttpServletRequest request) 
     {
 
