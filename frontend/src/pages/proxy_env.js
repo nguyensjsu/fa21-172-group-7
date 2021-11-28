@@ -1,14 +1,14 @@
 
 
 /**toggle for kong or local
- * true = spring 8080 server
- * false = kong /api/...
+ * true = kong /api/...
+ * false = spring 8080 server
  */
-var kong = false
+var kong = true
 
 var spring_prefix = ""
 
-var api_host =  kong? spring_prefix : "/api"
+var api_host =  !kong ? spring_prefix : "/api"
 
 var axio_header = {headers: { apikey: '2H3fONTa8ugl1IcVS7CjLPnPIS2Hp9dJ' }}
 
