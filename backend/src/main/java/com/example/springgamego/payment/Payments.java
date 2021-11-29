@@ -27,6 +27,7 @@ class Payments {
     @Column(nullable=false) private String cardexpyear ;
     @Column(nullable=false) private String cardcvv ;
     @Column(nullable=false) private String email ;
+    @Column(nullable=false) private String gameid ;
     @Column(nullable=true) private String notes ;
 
     @Column(nullable=true) private String AuthID ;

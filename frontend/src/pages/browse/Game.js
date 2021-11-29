@@ -18,12 +18,10 @@ export default function Game(props) {
   });
 
 
-  // THIS IS NOT WORKING YET
   const addToCart = () => {
 
-
     if (cartState === 'Add To Cart') {
-      localStorage.setItem('gameID', props.game.ID);
+      localStorage.setItem('gameid', props.game.id);
       localStorage.setItem('gameName', props.game.name);
       localStorage.setItem('description', props.game.description);
       localStorage.setItem('price', props.game.price);

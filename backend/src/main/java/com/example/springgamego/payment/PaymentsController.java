@@ -76,6 +76,7 @@ public class PaymentsController {
         String cardexpyear = command.getCardexpyear();
         String cardcvv = command.getCardcvv();
         String email = command.getEmail();
+        String gameid = command.getGameid();
         String cardType = cardnum.charAt(0)+"";
 
         if (cardType.equals("4")) cardType = "001";
@@ -98,6 +99,7 @@ public class PaymentsController {
         payment.setCardexpyear(command.getCardexpyear());
         payment.setCardcvv(command.getCardcvv());
         payment.setEmail(command.getEmail());
+        payment.setGameid(command.getGameid());
 
         HashMap<String, String> returns = new HashMap<>();
         int orderNum = -9999;
