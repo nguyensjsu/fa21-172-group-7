@@ -30,7 +30,7 @@ export default function Browse() {
 
   const getGames = async() => {
     try {
-      const response = await axios.get(api_host+'/games', axio_header);
+      const response = await axios.get(api_host+'/games/available', axio_header);
       setGames(response.data);
     } catch (error) {
       console.log("Couldn't fetch games :(");

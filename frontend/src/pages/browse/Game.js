@@ -7,6 +7,8 @@ import '../payments/Payments.js';
 import Button from '@mui/material/Button';
 import {Redirect} from 'react-router-dom';
 
+
+
 export default function Game(props) {
   // State variables
   const [example, setExample] = useState('EX'); // pass in logged in and non-logged in state in props from Browse?
@@ -18,7 +20,7 @@ export default function Game(props) {
   });
 
 
-  const addToCart = () => {
+  const addToCart = async() => {
 
     if (cartState === 'Add To Cart') {
       localStorage.setItem('gameid', props.game.id);

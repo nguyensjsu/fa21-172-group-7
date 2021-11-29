@@ -10,42 +10,19 @@ export default function Accounts() {
   const [example, setExample] = useState('EX');
   const [users, setUsers] = useState([]);
 
-  // ** UNCOMMENT AFTER User API is made
-  // const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState([]);
 
 
-  // Function that is called when page is changed
   useEffect(()=>{
     console.log("View in browser's developer console!");
-
     getUsers();
-
-    // const dbAccounts = axios.get(api_host+'/getUsers', axio_header).then(response=>{
-    //   accounts = response.data
-    //   console.log('data', response);
-    // });
-
-    // dbAccounts.forEach( (acct) => {
-    //   rows.push({
-    //     username: acct.getUsername(), 
-    //     email: acct.getEmail() 
-    //   })
-    // })
-
-  });
-
-  useEffect(()=>{
-    console.log("View in browser's developer console!");
-
-    // ** UNCOMMENT AFTER User API is made
-    // getUsers();
   }, []);
 
 
-  // ** FIX AFTER User API is made
+
   const getUsers = async() => {
     try {
-      const response = await axios.get(api_host+'/users', axio_header);
+      const response = await axios.get(api_host+'/user', axio_header);
       setUsers(response.data);
       let tableRows = []
       response.data.map((user) => {
@@ -54,8 +31,7 @@ export default function Accounts() {
           email: user.email,
         })
       })
-      // ** UNCOMMENT AFTER User API is made
-      // setRows(tableRows);
+      setRows(tableRows);
     } catch (error) {
       console.log("Couldn't get users");
     }
@@ -77,21 +53,6 @@ export default function Accounts() {
     },
   ]
 
-  // ** DELETE AFTER User API is made
-  const rows = [
-    {
-      username:"userone",
-      email:"emailone@gmail.com"
-    },
-    {
-      username:"usertwo",
-      email:"emailtwo@gmail.com"
-    },
-    {
-      username:"usertwo",
-      email:"emailtwo@gmail.com"
-    },
-  ]
 
   return(
     <div className='Accounts'>

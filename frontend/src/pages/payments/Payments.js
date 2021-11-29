@@ -277,7 +277,7 @@ export default function Payments(props) {
         lastname, address, city, state, zip, cardnum, cardexpmonth, cardexpyear, cardcvv,
         amount: cost, gameid: localStorage.getItem('gameid')
       }
-      console.log("GAME ID FROM PAYMENTS.JS = ", localStorage.getItem('gameid'));
+      // make payment
       await axios.post(api_host + '/payments/pay', variable, axio_header).then(response => {
         if (response.data.err == '0') {
           setMsg("")
@@ -288,6 +288,7 @@ export default function Payments(props) {
           setMsg("Invalid card, please try a different card")
         }
       })
+
     }
   }
 

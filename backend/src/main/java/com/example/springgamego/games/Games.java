@@ -13,7 +13,7 @@ import lombok. RequiredArgsConstructor;
 @Table(indexes=@Index (name = "altIndex", columnList = "ID", unique = true))
 @Data
 @RequiredArgsConstructor
-class Games {
+public class Games {
     @Column(nullable=false) @Id @GeneratedValue private long ID;
     @Column(nullable=false) private String name ;
     @Column(nullable=false) private String description ;
