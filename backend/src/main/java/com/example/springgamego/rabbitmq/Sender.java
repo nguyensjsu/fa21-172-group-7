@@ -34,6 +34,4 @@ public class Sender {
     }
 
 }
-public class Sender {
-    
-}
+

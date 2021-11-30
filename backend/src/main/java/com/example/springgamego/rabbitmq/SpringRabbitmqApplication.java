@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class SpringRabbitmqWorkersApplication {
+public class SpringRabbitmqApplication {
 
     @Profile("usage_message")
     @Bean
