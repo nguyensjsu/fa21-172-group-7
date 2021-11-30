@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication
+//@SpringBootApplication
 @EnableScheduling
 public class SpringRabbitmqApplication {
 
@@ -27,6 +27,6 @@ public class SpringRabbitmqApplication {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(SpringRabbitmqWorkersApplication.class, args);
+        SpringApplication.run(SpringRabbitmqApplication.class, args);
     }
 }
