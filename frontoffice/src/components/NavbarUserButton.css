@@ -1,0 +1,17 @@
+.href {
+  text-decoration: none;
+  color: black;
+}
+
+.href:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.profile-avatar {
+  margin: auto 10px;
+  color: white;
+  background: black !important;
+  height: 30px !important;
+  width: 30px !important;
+}

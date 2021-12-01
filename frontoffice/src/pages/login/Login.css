@@ -1,0 +1,45 @@
+.Login {
+  margin-top: 5%;
+}
+
+.login-label {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.login-container {
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.login-btn {
+  margin-top: 30px;
+  padding: 10px;
+  width: 100%;
+  background-color: light-grey;
+  color: black
+}
+
+.not-member {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.not-member a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.spacer {
+  margin: 30px auto;
+}
+
+.loginInfo {
+  padding: 50px;
+}
+

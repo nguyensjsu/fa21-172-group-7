@@ -1,0 +1,29 @@
+.Browse {
+  padding: 20px;
+}
+
+.game {
+  display: inline-block;
+  margin: 20px;
+}
+
+#cart-modal-box {
+  background-color: white;
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 20vh;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#cart-modal {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+#cart-modal-button {
+  margin-top: 20px;
+}

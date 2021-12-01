@@ -29,15 +29,14 @@ const routing = (
     <div>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/browse" component={Browse} />
-        <PrivateRoute exact path="/payments" component={Payments} />
+      <PublicRoute exact path="/" component={Login} />
+
+        <Route exact path="/ping" component={App} />
         <AdminRoute exact path="/inventory" component={Inventory} />
         <AdminRoute exact path="/transactions" component={Transactions} />
         <AdminRoute exact path="/accounts" component={Accounts} />
         <Route exact path="/error" component={Error} />
         <PublicRoute exact path="/register" component={Register} />
-        <PublicRoute exact path="/login" component={Login} />
         <PrivateRoute exact path="/logout" component={Logout} />
       </Switch>
     </div>
