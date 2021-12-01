@@ -27,7 +27,6 @@ export default function Accounts() {
       let tableRows = []
       response.data.map((user) => {
         tableRows.push({
-          username: user.username,
           email: user.email,
         })
       })
@@ -39,12 +38,6 @@ export default function Accounts() {
 
 
   const columns = [
-    {
-      id: 'username',
-      label: 'Username',
-      minWidth: 170,
-      align: 'center',
-    },
     {
       id: 'email',
       label: 'Email',

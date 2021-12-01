@@ -8,8 +8,8 @@ export default function AdminRoute({
   return (
     <Route
       {...rest}
-      render={(props) => // TO-DO: replace '' with 'admin'
-        localStorage.getItem('userType') === '' ? (
+      render={(props) => 
+        localStorage.getItem('userType') === 'admin' ? (
           <Component {...props} />
         ) : (
           <Redirect to="/error" />
