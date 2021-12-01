@@ -53,9 +53,9 @@ Each week should include:
 ![Board Week 3](images/sn-3.png)
 
 ### Accomplishments:
-1.[Add game info to payments database](https://github.com/nguyensjsu/fa21-172-group-7/issues/27)
+1. [Add game info to payments database](https://github.com/nguyensjsu/fa21-172-group-7/issues/27)
 - Game information is included when a payment is made, and the game inventory count is decreased
-2.[Connect Accounts page to the backend](https://github.com/nguyensjsu/fa21-172-group-7/issues/36)
+2. [Connect Accounts page to the backend](https://github.com/nguyensjsu/fa21-172-group-7/issues/36)
 - Admins can view the accounts page to see all user accounts
 3. Added an admin account to view admin-only pages
 
