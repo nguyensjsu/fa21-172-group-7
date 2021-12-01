@@ -40,7 +40,7 @@ export default function Login() {
           localStorage.setItem('ggToken', '123abc');
           console.log("Admin logged in");
           hasError = false;
-          history.push('/');
+          history.push('/browse');
           window.location.reload();
         } else {
           setSeverity('info')

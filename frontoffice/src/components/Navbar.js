@@ -36,7 +36,7 @@ export default class Navbar extends Component {
           <a href="/register" className="options-text">
             Register
           </a>
-          <a href="/login" className="options-text">
+          <a href="/" className="options-text">
             Login
           </a>
         </div>
@@ -52,47 +52,11 @@ export default class Navbar extends Component {
           </a>
         </div>
       );
-    
-
-    const adminNavbarOptions = userType === 'admin' ? 
-      (
-        <div className="navbar-options">
-          <a href="/inventory" className="options-text">
-            Inventory
-          </a>
-          <a href="/transactions" className="options-text">
-            Transactions
-          </a>
-          <a href="/accounts" className="options-text">
-            Accounts
-          </a>
-        </div>
-      )
-      :
-      (
-        <div className="navbar-options">
-          <a href="/inventory" className="options-text">
-            Inventory
-          </a>
-          <a href="/transactions" className="options-text">
-            Transactions
-          </a>
-          <a href="/accounts" className="options-text">
-            Accounts
-          </a>
-          <a href="/register" className="options-text">
-            Register
-          </a>
-          <a href="/login" className="options-text">
-            Login
-          </a>
-        </div>
-      );
 
     return (
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="/" className="options-text">
+          <a href="/browse" className="options-text">
             GameGo
           </a>
         </div>
@@ -103,9 +67,8 @@ export default class Navbar extends Component {
         <button onClick={this.handleSwitch}>
           Switch Navbars
         </button>
-        { this.state.userType === 'admin'
-          ? adminNavbarOptions 
-          : userNavbarOptions
+        { 
+          userNavbarOptions
         }
         <NavbarUserButton />
       </div>
