@@ -49,7 +49,8 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 
 ## Commands to Run React Frontend
 ```
-cd frontend
+cd frontoffice / backoffice
+npm install
 npm start
 ```
 
