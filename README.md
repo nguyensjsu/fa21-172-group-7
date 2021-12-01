@@ -165,3 +165,5 @@ Has the same steps as deploying Backend-Spring:
 4. `docker push YourDockerRepo`
 5. Uploads [deployment.yml](https://github.com/nguyensjsu/fa21-172-group-7/tree/gke/frontend/kuber) to GKE and create a pod and expose it with service.
 
+### RabbitMQ Deployment 
+
