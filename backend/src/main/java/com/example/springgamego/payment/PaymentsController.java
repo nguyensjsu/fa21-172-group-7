@@ -16,11 +16,19 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import com.example.springgamego.games.Games;
+import com.example.springgamego.games.GamesRepository;
+
+
 @Slf4j
 @RestController
 public class PaymentsController {
 
     private final PaymentsRepository repository;
+
+    @Autowired 
+    private GamesRepository gamesRepository;
 
     @Value("${cybersource.apihost}") private String apiHost ;
     @Value("${cybersource.merchantkeyid}") private String merchantKeyId ;
@@ -76,6 +84,7 @@ public class PaymentsController {
         String cardexpyear = command.getCardexpyear();
         String cardcvv = command.getCardcvv();
         String email = command.getEmail();
+        String gameid = command.getGameid();
         String cardType = cardnum.charAt(0)+"";
 
         if (cardType.equals("4")) cardType = "001";
@@ -98,6 +107,7 @@ public class PaymentsController {
         payment.setCardexpyear(command.getCardexpyear());
         payment.setCardcvv(command.getCardcvv());
         payment.setEmail(command.getEmail());
+        payment.setGameid(command.getGameid());
 
         HashMap<String, String> returns = new HashMap<>();
         int orderNum = -9999;
@@ -150,6 +160,17 @@ public class PaymentsController {
                 
                 returns.put("Message", "Success Payment");
                 returns.put("OrderNum", orderNum+"");
+
+                // Reduce game inventory
+                Long gameidLong = Long.parseLong(gameid);
+        
+                Games game = gamesRepository.findByID(gameidLong);
+                int currentInventory = Integer.parseInt(game.getInventoryCount());
+                String newInventory = String.valueOf(currentInventory - 1);
+                game.setInventoryCount(newInventory);
+
+                gamesRepository.save(game);
+
                 return returns;
             }
             else {

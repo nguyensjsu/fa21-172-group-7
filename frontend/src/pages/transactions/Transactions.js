@@ -28,7 +28,8 @@ export default function Transactions() {
           firstname: payment.firstname,
           lastname: payment.lastname,
           email: payment.email,
-          amount: "$" + payment.amount
+          amount: "$" + payment.amount,
+          gameid: payment.gameid,
         })
       })
       setRows(tableRows);
@@ -61,6 +62,12 @@ export default function Transactions() {
     {
       id: 'amount',
       label: 'Amount',
+      minWidth: 170,
+      align: 'center',
+    },
+    {
+      id: 'gameid',
+      label: 'Game ID',
       minWidth: 170,
       align: 'center',
     },

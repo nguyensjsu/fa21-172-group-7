@@ -45,6 +45,7 @@ export default function Payments(props) {
   const [cardexpyear, setCardexpyear] = useState("")
   const [cardcvv, setCardcvv] = useState("")
   const [email, setEmail] = useState("")
+  const [gameid, setGameid] = useState("")
 
   const [errphone, setErrphone] = useState(false)
   const [erremail, setErremail] = useState(false)
@@ -274,8 +275,9 @@ export default function Payments(props) {
       const variable = {
         phone, email, firstname,
         lastname, address, city, state, zip, cardnum, cardexpmonth, cardexpyear, cardcvv,
-        amount: cost
+        amount: cost, gameid: localStorage.getItem('gameid')
       }
+      // make payment
       await axios.post(api_host + '/payments/pay', variable, axio_header).then(response => {
         if (response.data.err == '0') {
           setMsg("")
@@ -286,6 +288,7 @@ export default function Payments(props) {
           setMsg("Invalid card, please try a different card")
         }
       })
+
     }
   }
 

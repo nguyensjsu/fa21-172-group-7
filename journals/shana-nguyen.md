@@ -53,8 +53,25 @@ Each week should include:
 ![Board Week 3](images/sn-3.png)
 
 ### Accomplishments:
+1. [Add game info to payments database](https://github.com/nguyensjsu/fa21-172-group-7/issues/27)
+- Game information is included when a payment is made, and the game inventory count is decreased
+2. [Connect Accounts page to the backend](https://github.com/nguyensjsu/fa21-172-group-7/issues/36)
+- Admins can view the accounts page to see all user accounts
+3. Added an admin account to view admin-only pages
+
+### Challenges:
+- gradle build started failing every time; workaround is to comment out the tests
+- admin logout didn't work properly; turns out, the error was that the boolean formatting of `if user == (type1 || type2)` doesn't work, and it needs to be written as `if user == type1 || user == type2`
+
+
+
+## Week 4 (Dec 1 - Dec 6)
+
+![Board Week 4](images/.png)
+
+### Accomplishments:
+
 
 
 ### Challenges:
-
 
