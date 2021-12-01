@@ -54,25 +54,40 @@ export default class Navbar extends Component {
       );
     
 
-    const adminNavbarOptions = (
-      <div className="navbar-options">
-        <a href="/inventory" className="options-text">
-          Inventory
-        </a>
-        <a href="/transactions" className="options-text">
-          Transactions
-        </a>
-        <a href="/accounts" className="options-text">
-          Accounts
-        </a>
-        <a href="/register" className="options-text">
-          Register
-        </a>
-        <a href="/login" className="options-text">
-          Login
-        </a>
-      </div>
-    );
+    const adminNavbarOptions = userType === 'admin' ? 
+      (
+        <div className="navbar-options">
+          <a href="/inventory" className="options-text">
+            Inventory
+          </a>
+          <a href="/transactions" className="options-text">
+            Transactions
+          </a>
+          <a href="/accounts" className="options-text">
+            Accounts
+          </a>
+        </div>
+      )
+      :
+      (
+        <div className="navbar-options">
+          <a href="/inventory" className="options-text">
+            Inventory
+          </a>
+          <a href="/transactions" className="options-text">
+            Transactions
+          </a>
+          <a href="/accounts" className="options-text">
+            Accounts
+          </a>
+          <a href="/register" className="options-text">
+            Register
+          </a>
+          <a href="/login" className="options-text">
+            Login
+          </a>
+        </div>
+      );
 
     return (
       <div className="navbar-container">
