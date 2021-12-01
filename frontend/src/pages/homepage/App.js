@@ -28,7 +28,7 @@ function App() {
   }
 
   function call_UserAPI() {
-    axios.get(api_host+'/user', axio_header).then(response=>{
+    !localStorage.getItem('userType')=="admin" && axios.get(api_host+'/user', axio_header).then(response=>{
       let data = response.data;
       console.log('user data', response);
       if(data.length <= 0) localStorage.clear()
