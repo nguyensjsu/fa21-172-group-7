@@ -9,6 +9,8 @@ import { useHistory } from 'react-router-dom'
 
 import ShoppingCart from './ShoppingCart.js';
 
+import Footer from '../../components/Footer.js';
+
 export default function Payments(props) {
 
   const [cost, setCost] = useState(localStorage.getItem('price') == null ? "0.00" : localStorage.getItem('price'))
@@ -295,11 +297,12 @@ export default function Payments(props) {
   return (
     <div className='Payments'>
 
-      <ShoppingCart />
+      <ShoppingCart/>
       
       <p id="payment-error-msg" >{msg? msg:""}</p>
 
       <Box
+        m={5} pt={3}
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 3, width: '20vw' },
@@ -337,6 +340,8 @@ export default function Payments(props) {
         <Button disabled={disbutton} style={{ float: "right", marginRight: "20vw" }} variant="contained" onClick={() => { payProcess() }}>Pay Now!</Button>
 
       </Box>
+
+      <Footer />
 
       <Modal
         open={modal}

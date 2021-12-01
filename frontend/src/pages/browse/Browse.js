@@ -11,6 +11,7 @@ import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
+import Footer from '../../components/Footer.js';
 
 export default function Browse() {
   // State variables
@@ -70,6 +71,8 @@ export default function Browse() {
           <Button id="cart-modal-button" variant="contained" onClick={() => { history.push("/Payments"); }}>Go to Payments Page</Button>
         </Box>
       </Modal>
+
+      <Footer />
 
     </div>
 

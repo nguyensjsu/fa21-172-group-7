@@ -57,7 +57,7 @@ export default function ShoppingCart() {
 
   return(
     <div className='ShoppingCart'>
-      <h1>ShoppingCart</h1>
+      <h1>Shopping Cart</h1>
         <ColumnGroupingTable columns={columns} rows={rows} title="Shopping Cart" />
     </div>
   );
