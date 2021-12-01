@@ -20,22 +20,39 @@ export default class Navbar extends Component {
   }
 
   render() {
-    const userNavbarOptions = (
-      <div className="navbar-options">
-        <a href="/browse" className="options-text">
-          Browse
-        </a>
-        <a href="/Payments" className="options-text">
-          Payments
-        </a>
-        <a href="/register" className="options-text">
-          Register
-        </a>
-        <a href="/login" className="options-text">
-          Login
-        </a>
-      </div>
-    );
+    let userType = ''
+    if(window.localStorage){
+      userType = localStorage.getItem('userType');
+    }
+    const userNavbarOptions = userType === '' ?
+      (
+        <div className="navbar-options">
+          <a href="/browse" className="options-text">
+            Browse
+          </a>
+          <a href="/Payments" className="options-text">
+            Payments
+          </a>
+          <a href="/register" className="options-text">
+            Register
+          </a>
+          <a href="/login" className="options-text">
+            Login
+          </a>
+        </div>
+      )
+      :
+      (
+        <div className="navbar-options">
+          <a href="/browse" className="options-text">
+            Browse
+          </a>
+          <a href="/Payments" className="options-text">
+            Payments
+          </a>
+        </div>
+      );
+    
 
     const adminNavbarOptions = (
       <div className="navbar-options">
@@ -66,7 +83,7 @@ export default class Navbar extends Component {
         </div>
         <Input
           type="navbar-search"
-          placeholder="Search (We can remove this later if needed)"
+          placeholder="Search"
         />
         <button onClick={this.handleSwitch}>
           Switch Navbars

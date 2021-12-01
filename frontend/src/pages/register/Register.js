@@ -23,7 +23,6 @@ export default function Register() {
 
   // Function that is called when page is changed
   useEffect(()=>{
-    console.log("View in browser's developer console!");
   });
 
   const emailRegex = (e) => {
@@ -64,7 +63,8 @@ export default function Register() {
       const salt = bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(password, salt);
       const payload = {
-        email, password: hash
+        email: email.toLowerCase(),
+        password: hash
       }
       try {
         setSeverity('info')
@@ -77,6 +77,10 @@ export default function Register() {
             console.log('here')
             history.push('/login');
             window.location.reload();
+          } else if (res.data.msg === 'email exists'){
+            setSeverity('error')
+            setAlertMsg('Email already exists. Did you mean to log in?');
+            setOpen(true);
           }
         }, 1100);
       } catch (error) {
@@ -122,7 +126,7 @@ export default function Register() {
           <button className='register-btn' onClick={handleSubmit}>Register</button>
         </form>
         <div className='not-member'>
-          Already a member? <a href='/login'>Sign in.</a>
+          Already a member? <a href='/login'>Log in.</a>
         </div>
       </div>
     </div>

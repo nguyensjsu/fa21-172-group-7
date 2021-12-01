@@ -19,7 +19,6 @@ export default function Login() {
 
   // Function that is called when page is changed
   useEffect(()=>{
-    console.log("View in browser's developer console!");
   });
 
   const handleEmail = (e) => {
@@ -43,18 +42,30 @@ export default function Login() {
           hasError = false;
           history.push('/');
           window.location.reload();
-        }
-        else {
-          const payload = { email }
-          const res = await axios.post(api_host + '/user/login', payload, axio_header);
-          console.log(res);
-          if(res.data.error === 'false') {
-            if(bcrypt.compareSync(password, res.data.password)){
-              console.log('Passwords match');
-              hasError = false;
-              authenticateUser(email);
+        } else {
+          setSeverity('info')
+          setAlertMsg('Please wait. System processing...');
+          setOpen(true);
+          setTimeout(async ()=> {
+            const payload = { email: email.toLowerCase() }
+            const res = await axios.post(api_host + '/user/login', payload, axio_header);
+            console.log(res);
+            if(res.data.error === 'false') {
+              if(bcrypt.compareSync(password, res.data.password)){
+                console.log('Passwords match');
+                hasError = false;
+                authenticateUser(email.toLowerCase());
+              } else {
+                setSeverity('error');
+                setAlertMsg('Invalid credentials. Try again!');
+                setOpen(hasError);
+              }
+            } else {
+              setSeverity('error');
+              setAlertMsg('Invalid credentials. Try again!');
+              setOpen(hasError);
             }
-          }
+          }, 1100);
         }
       } catch (error) {
         setSeverity('error');
@@ -63,9 +74,6 @@ export default function Login() {
         return;
       }
     }
-    setSeverity('error');
-    setAlertMsg('Invalid credentials. Try again!');
-    setOpen(hasError);
   }
 
   const authenticateUser = async (e) => {

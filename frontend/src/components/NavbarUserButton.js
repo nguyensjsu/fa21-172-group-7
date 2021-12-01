@@ -6,12 +6,17 @@ import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ImageIcon from '@mui/icons-material/Image';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginIcon from '@mui/icons-material/Login';
 import Logout from '@mui/icons-material/Logout';
-import Settings from '@mui/icons-material/Settings';
-
+import PersonIcon from '@mui/icons-material/Person';
+import PaymentIcon from '@mui/icons-material/Payment';
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+// import ImageIcon from '@mui/icons-material/Image';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import Settings from '@mui/icons-material/Settings';
 
 export default function NavbarUserButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,17 +38,17 @@ export default function NavbarUserButton(props) {
           <a href='/browse' className='href'>
             <MenuItem>
               <ListItemIcon>
-                <ImageIcon fontSize="small" />
+                <VideogameAssetIcon fontSize="small" />
               </ListItemIcon>
               Browse
             </MenuItem>
           </a>
-          <a href='/payment' className='href'>
+          <a href='/payments' className='href'>
             <MenuItem>
               <ListItemIcon>
-                <ImageIcon fontSize="small" />
+                <PaymentIcon fontSize="small" />
               </ListItemIcon>
-              Payment
+              Payments
             </MenuItem>
           </a>
         </React.Fragment>
@@ -54,7 +59,7 @@ export default function NavbarUserButton(props) {
           <a href='/inventory' className='href'>
             <MenuItem>
               <ListItemIcon>
-                <AccountCircleIcon fontSize="small" />
+                <InventoryIcon fontSize="small" />
               </ListItemIcon>
               Inventory
             </MenuItem>
@@ -62,7 +67,7 @@ export default function NavbarUserButton(props) {
           <a href='/transactions' className='href'>
             <MenuItem>
               <ListItemIcon>
-                <Settings fontSize="small" />
+                <ReceiptIcon fontSize="small" />
               </ListItemIcon>
               Transactions
             </MenuItem>
@@ -70,7 +75,7 @@ export default function NavbarUserButton(props) {
           <a href='/accounts' className='href'>
             <MenuItem>
               <ListItemIcon>
-                <Settings fontSize="small" />
+                <AdminPanelSettingsIcon fontSize="small" />
               </ListItemIcon>
               Accounts
             </MenuItem>
@@ -104,7 +109,7 @@ export default function NavbarUserButton(props) {
         <a href='/register' className='href'>
           <MenuItem>
             <ListItemIcon>
-              <LoginIcon fontSize="small" />
+              <PersonIcon fontSize="small" />
             </ListItemIcon>
             Register
           </MenuItem>
@@ -141,17 +146,16 @@ export default function NavbarUserButton(props) {
             </div>);
         }
       } else {
-        if (screenSize <= 1300) { // admin and small screen
+        if (screenSize <= 1300) { // user and small screen
           return (
             <div>
               {userRoutes}
               <Divider />
-              {adminRoutes}
-              <Divider />
               {register}
               {login}
             </div>);
-        } else {
+        }
+        else { // user and large screen
           return (
             <div>
               {register}
