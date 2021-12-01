@@ -37,6 +37,10 @@ function App() {
         localStorage.setItem('ggToken', '');
       }
     })
+    if(!localStorage.getItem('userType')){
+      localStorage.setItem('userType', '');
+      localStorage.setItem('ggToken', '');
+    }
   }
 
   useEffect(()=>{
