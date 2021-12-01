@@ -48,6 +48,11 @@ public class UserController {
     log.info( "Command: " + command ) ;
     
     HashMap<String, String> returns = new HashMap<>();
+    if(findByEmail(command.getEmail()) != null){
+      returns.put("error", "true");
+      returns.put("msg", "email exists");
+      return returns;
+    }
     User user = new User();
     user.setEmail(command.getEmail());
     user.setPassword(command.getPassword());
