@@ -5,7 +5,7 @@ export default function Logout(props) {
   const history = useHistory();
 
   useEffect(()=>{
-    if(localStorage.getItem('userType') === ('user' || 'admin')) {
+    if(localStorage.getItem('userType') === 'user' || localStorage.getItem('userType') === 'admin') {
       localStorage.setItem('userType', '');
       localStorage.setItem('ggToken', '');
       history.push('/');

@@ -12,11 +12,12 @@ export default function PrivateRoute({
     <Route
       {...rest}
       render={(props) =>
-        localStorage.getItem('userType') === ('user' || 'admin') ? (
+        (localStorage.getItem('userType') === 'user' || localStorage.getItem('userType') === 'admin') ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
         )
+
       }
     />
   );

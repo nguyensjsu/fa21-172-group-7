@@ -7,7 +7,7 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state= {
-      userType: 'user'
+      userType: localStorage.getItem('userType')
     }
   }
 
@@ -71,8 +71,8 @@ export default class Navbar extends Component {
         <button onClick={this.handleSwitch}>
           Switch Navbars
         </button>
-        { localStorage.getItem('userType') === "admin"
-          ? adminNavbarOptions
+        { this.state.userType === 'admin'
+          ? adminNavbarOptions 
           : userNavbarOptions
         }
         <NavbarUserButton />
