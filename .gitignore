@@ -4,3 +4,5 @@ build/
 .gradle/
 .DS_Store
 bin/
+backend/gradlew
+backend/gradlew
