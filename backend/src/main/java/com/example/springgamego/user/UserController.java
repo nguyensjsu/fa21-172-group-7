@@ -56,6 +56,7 @@ public class UserController {
     User user = new User();
     user.setEmail(command.getEmail());
     user.setPassword(command.getPassword());
+    user.setAttempts(0);
     repository.save(user);
     returns.put("error", "false");
 
@@ -75,6 +76,26 @@ public class UserController {
       returns.put("error", "true");
       return returns;
     }
+    repository.save(user);
+    returns.put("password", user.getPassword());
+    returns.put("attempts", String.valueOf(user.getAttempts()));
+    returns.put("error", "false");
+
+    return returns;
+  }
+
+  @PostMapping("/user/login/increment")
+  @CrossOrigin(origins = "*")
+  Map<String, String> increment(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
+    log.info( "Model: " + model ) ;
+    log.info( "Request: " + request ) ;
+    log.info( "Command: " + command ) ;
+    
+    HashMap<String, String> returns = new HashMap<>();
+    User user = findByEmail(command.getEmail());
+    int attempts = user.getAttempts() + 1;
+    user.setAttempts(attempts);
+    repository.save(user);
     returns.put("password", user.getPassword());
     returns.put("error", "false");
 
@@ -94,7 +115,24 @@ public class UserController {
       returns.put("error", "true");
       return returns;
     }
+    user.setAttempts(0);
     user.setToken(command.getToken());
+    repository.save(user);
+    returns.put("error", "false");
+
+    return returns;
+  }
+
+  @PostMapping("/user/login/unlock")
+  @CrossOrigin(origins = "*")
+  Map<String, String> unlock(@Valid @RequestBody UserCommand command, Errors errors, Model model, HttpServletRequest request) {
+    log.info( "Model: " + model ) ;
+    log.info( "Request: " + request ) ;
+    log.info( "Command: " + command ) ;
+    
+    HashMap<String, String> returns = new HashMap<>();
+    User user = findByEmail(command.getEmail());
+    user.setAttempts(0);
     repository.save(user);
     returns.put("error", "false");
 
