@@ -83,9 +83,9 @@ export default function ColumnGroupingTable(props) {
           <TableBody>
             {props.rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
+              .map((row, i) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={i}>
                     {props.columns.map((column) => {
                       const value = row[column.id];
                       return (

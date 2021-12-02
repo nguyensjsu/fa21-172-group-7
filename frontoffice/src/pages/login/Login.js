@@ -48,7 +48,11 @@ export default function Login() {
               authenticateUser(email.toLowerCase());
             } else {
               setSeverity('error');
-              setAlertMsg('Invalid credentials. Try again!');
+              if(res.data.attempts === '2') {
+                setAlertMsg('Your account has been locked! Please wait for an admin to unlock it.');
+              } else {
+                setAlertMsg('Invalid credentials. Try again!');
+              }
               setOpen(hasError);
               incrementAttempts(email.toLowerCase());
             }
