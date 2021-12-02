@@ -43,7 +43,7 @@ public class GamesController {
             game1.setName( "Kingdom Hearts ");
             game1.setDescription( "Fighting RPG" );
             game1.setPrice( "30" );
-            game1.setInventoryCount( "5" );
+            game1.setInventoryCount( "0" );
 
             Games game2 = new Games();
             game2.setName( "Kingdom Hearts 2");
