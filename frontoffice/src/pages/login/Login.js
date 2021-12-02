@@ -41,7 +41,7 @@ export default function Login() {
           const payload = { email: email.toLowerCase() }
           const res = await axios.post(api_host + '/user/login', payload, axio_header);
           console.log(res);
-          if(res.data.error === 'false') {
+          if(res.data.error === 'false' && res.data.attempts < '3') {
             if(bcrypt.compareSync(password, res.data.password)){
               console.log('Passwords match');
               hasError = false;
@@ -50,7 +50,12 @@ export default function Login() {
               setSeverity('error');
               setAlertMsg('Invalid credentials. Try again!');
               setOpen(hasError);
+              incrementAttempts(email.toLowerCase());
             }
+          } else if(res.data.attempts >= '3') {
+            setSeverity('error');
+            setAlertMsg('Your account has been locked! Please wait for an admin to unlock it.');
+            setOpen(hasError);
           } else {
             setSeverity('error');
             setAlertMsg('Invalid credentials. Try again!');
@@ -64,6 +69,11 @@ export default function Login() {
         return;
       }
     }
+  }
+
+  const incrementAttempts = async (e) => {
+    const payload = {email: e};
+    const res = await axios.post(api_host + '/user/login/increment', payload, axio_header);
   }
 
   const authenticateUser = async (e) => {

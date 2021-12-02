@@ -18,4 +18,5 @@ class User {
     @Column(nullable=false) private String email;
     @Column(nullable=false) private String password;
     @Column(nullable=true) private String token;
+    @Column(nullable=false) private int attempts;
 }
