@@ -29,7 +29,7 @@ export default function Accounts() {
           <Button
             variant="contained"
             onClick={()=>{unlockUser(user.email)}}
-            disabled={user.attempts < 1 ? true : false}
+            disabled={user.attempts < 3 ? true : false}
           >
             Unlock
           </Button>
