@@ -1,0 +1,32 @@
+.HomePage {
+  min-height: 66.8vh;
+}
+
+.HomePage .main-component {
+  border-bottom: 1.5px solid #c4c4c4;
+  padding: 48px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.HomePage .main-component .title {
+  padding: 10px;
+  font-size: 48px;
+  line-height: 62px;
+  color: black;
+}
+
+.HomePage .main-component .subtitle {
+  padding: 10px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.HomePage .main-component .buttons {
+  padding: 10px;
+  /* margin: auto; */
+}

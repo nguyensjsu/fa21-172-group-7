@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "frontend": "cd frontend && npm start",
+    "fo": "cd frontoffice && npm start",
+    "bo": "cd backoffice && npm start",
     "docker-kong": "docker ps && npm run stop-images -s; npm run rm-images -s; npm run build-image && npm run create-network && npm run spring-gamego && npm run kong && npm run kong2 && npm run echo-done",
     "docker-kong-sql": "docker ps && npm run stop-images -s; npm run rm-images -s; npm run build-image && npm run create-network && npm run sql && npm run spring-gamego && npm run kong && npm run kong2 && npm run echo-done",
     "sql": "docker run -d --name mysql --network gamego-network -td -p 3306:3306 -e MYSQL_ROOT_PASSWORD=welcome mysql:8.0 && npm run sql-bash-echo && docker exec -it mysql bash",

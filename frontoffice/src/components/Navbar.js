@@ -36,7 +36,7 @@ export default class Navbar extends Component {
           <a href="/register" className="options-text">
             Register
           </a>
-          <a href="/" className="options-text">
+          <a href="/login" className="options-text">
             Login
           </a>
         </div>
@@ -56,7 +56,7 @@ export default class Navbar extends Component {
     return (
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="/browse" className="options-text">
+          <a href="/" className="options-text">
             GameGo
           </a>
         </div>
@@ -64,9 +64,6 @@ export default class Navbar extends Component {
           type="navbar-search"
           placeholder="Search"
         />
-        <button onClick={this.handleSwitch}>
-          Switch Navbars
-        </button>
         { 
           userNavbarOptions
         }
