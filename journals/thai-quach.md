@@ -29,7 +29,7 @@
 3. Challenges
     * No challenges, just need to have better frontend designs in future PR
 
-## Week 2 (Nov 25 - Dec 1)
+## Week 3 (Nov 25 - Dec 1)
 1. Snapshot
 ![](./images/tq-3.png)
 2. Accomplishments
@@ -48,3 +48,17 @@
     * During deployment of GKE, React-cluster and Spring-Kong-cluster ran into CORS rejections
     * I asked for help in class Slack, professor Paul Nguyen sent some resoucres and I was able to resolve the cors issue
     * Solution: Proxy React's origin (in `package.json`) to Backend-Cluster IP
+
+## Week 4 (Dec 2 - Dec 6)
+1. Snapshot
+![](./images/tq-4.png)
+2. Accomplishments
+    * Tasks  
+      * Merge and resolves conflicts from other branches into main
+      * Splitting Frontend-App into FrontendOfficer and BackendOffice React apps
+      * Deploy individuals offices to GKE
+    * Commits
+      * [Resolves conflicts and merge other branches](https://github.com/nguyensjsu/fa21-172-group-7/commit/2a5a89d24988e07e107fe3a834cc82387f2a78d9)
+      * [Splitting into FrontendOfficer and BackendOffice React apps](https://github.com/nguyensjsu/fa21-172-group-7/commit/67bb15371c8d3ef74711fd23d0bd1475197b91ca)
+3. Challenges
+    * No Significant challenges. GKE deployed no issues.
