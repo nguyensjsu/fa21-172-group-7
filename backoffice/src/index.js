@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // Route Types
 import PublicRoute from './routes/PublicRoute';
@@ -11,8 +12,7 @@ import AdminRoute from './routes/AdminRoute';
 
 // Pages
 import App from './pages/homepage/App';
-import Browse from './pages/browse/Browse';
-import Payments from './pages/payments/Payments';
+import HomePage from './pages/homepage/Homepage';
 import Inventory from './pages/inventory/Inventory';
 import Transactions from './pages/transactions/Transactions';
 import Accounts from './pages/accounts/Accounts';
@@ -29,16 +29,17 @@ const routing = (
     <div>
       <Navbar />
       <Switch>
-      <PublicRoute exact path="/" component={Login} />
-
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/ping" component={App} />
         <AdminRoute exact path="/inventory" component={Inventory} />
         <AdminRoute exact path="/transactions" component={Transactions} />
         <AdminRoute exact path="/accounts" component={Accounts} />
         <Route exact path="/error" component={Error} />
         <PublicRoute exact path="/register" component={Register} />
+        <PublicRoute exact path="/login" component={Login} />
         <PrivateRoute exact path="/logout" component={Logout} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 )

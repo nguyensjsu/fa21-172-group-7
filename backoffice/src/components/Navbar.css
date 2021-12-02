@@ -39,7 +39,8 @@
 } */
 
 .options-text:hover {
-  color: rgb(133, 216, 255);
+  /* color: rgb(133, 216, 255); */
+  color: #3b86f8;
   text-decoration: none;
 }
 

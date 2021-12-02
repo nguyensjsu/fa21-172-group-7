@@ -12,7 +12,7 @@ export default function AdminRoute({
         localStorage.getItem('userType') === 'admin' ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/error" />
+          <Redirect to="/login" />
         )
       }
     />

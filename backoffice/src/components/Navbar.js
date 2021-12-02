@@ -55,7 +55,7 @@ export default class Navbar extends Component {
           <a href="/register" className="options-text">
             Register
           </a>
-          <a href="/" className="options-text">
+          <a href="/login" className="options-text">
             Login
           </a>
         </div>

@@ -295,7 +295,7 @@ export default function Payments(props) {
   }
 
   return (
-    <div className='Payments'>
+    <div className='Payments' style={{paddingBottom: '62px'}}>
 
       <ShoppingCart/>
       
@@ -341,8 +341,6 @@ export default function Payments(props) {
 
       </Box>
 
-      <Footer />
-
       <Modal
         open={modal}
         aria-labelledby="modal-modal-title"
@@ -356,7 +354,7 @@ export default function Payments(props) {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Thank you for Shopping!
           </Typography>
-          <Button id="payments-modal-button" variant="contained" onClick={() => { history.push("/browse"); }}>Done</Button>
+          <Button id="payments-modal-button" variant="contained" onClick={() => { history.push("/"); }}>Done</Button>
         </Box>
       </Modal>
     </div>

@@ -63,7 +63,7 @@ export default function Browse() {
 
   return(
     <div className='Browse'>
-      <h1>Browse Games</h1>
+      <h1 style={{marginLeft:'20px'}}>Browse Games</h1>
 
         {games.map( (game,index) => (
             <div key={index} className="game">
@@ -87,8 +87,6 @@ export default function Browse() {
           <Button id="cart-modal-button" variant="contained" onClick={() => { history.push("/Payments"); }}>Go to Payments Page</Button>
         </Box>
       </Modal>
-
-      <Footer />
 
     </div>
 
