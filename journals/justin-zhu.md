@@ -30,3 +30,15 @@ Each week should include:
       * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/21'>User Register/Login/Logout</a>
 3. Challenges
    * Once again, nothing too challenging really. But there were two interesting topics of note to talk about. One was during my implementation of Kong API into our app. While doing this, our frontend application required additional setup from Kong in order to communicate to it. In the console, the error had something to do with cors. In the end, I had to make use of the cors plugin in Kong API to get it working. It was a cool experience. Another topic of note was during development of Login. Register/Login requires passwords. Obviously it is insecure to just send the plaintext password over the Internet. So I had to look into encryption/hashing methods. In the end, I stumbled upon bcrypt.js, which allowed me to hash my passwords and also verify that the plaintext matched the hashed password saved in the database.
+
+## Week 2 (Nov 24 - Dec 1)
+1. Snapshot
+![jz-3](https://user-images.githubusercontent.com/25803515/144363853-9d746400-992a-4b79-b227-055c4436ec27.png)
+
+2. Accomplishments
+   * As you can see there was a lot of progress made these past week. To start off, my PR for User Register/Login/Logout got approved, so that is merged in. And from there I had some designated tasks for me to work on. One was adding more code to ensure that we do not allow users to sign up for multiple accounts with the same email (i.e. duplicate emails). I was able to finish that one pretty early on. Another was conditional rendering of the navbar components and all the other buttons that users can click on to route to other pages. Basically, when the user is logged in, the button or option to login should not be allowed. The same goes for registering too. And when the user is logged out, they should not have the option to log out. This stuff all got merged Wednesday, as we met as a group that day to get all of our work merged together. After that, I had some spare time, so I decided to fix our UI up a bit. For instance, the footer wasn't in the right spot, so I made it somewhat better by sticking it near the bottom of the page. Some colors and padding were also inconsistent through the page, so I made it look better. We also split our app into front office and back office, so a lot of adjustments had to be made there as well. Finally, I did end up adding a homepage, since we didn't really have that going yet.
+   * Notable PRs
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/42'>Duplicate Emails and Navbar Conditional Rendering</a>
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/46'>UI Changes</a>
+3. Challenges
+   * There weren't really any noticeable challenges this week. I would say the next step for me would be to tackle another straightforward task. However after that, I will need to help the team figure out RabbitMQ. This is where I may start experiencing some challenges.
