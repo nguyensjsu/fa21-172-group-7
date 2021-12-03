@@ -123,17 +123,33 @@ npm start
    
 ![image](https://user-images.githubusercontent.com/18486562/143669537-21767101-5080-42b5-9978-01299afbd1ed.png)
 
+### GKE RabbitMQ
+Upload GKE yml files from
+https://github.com/nguyensjsu/fa21-172-group-7/tree/main/backend/GKE_rabbit
+
+Get credentials on GKE console:
+`gcloud container clusters get-credentials YOURCLUSTERHERE --zone YOURCLUSTERZONEHERE`
+ex:
+`gcloud container clusters get-credentials cluster-backend --zone us-central1-a`
+
+Execute scripts on GKE console:
+```
+kubectl create -f rabbitmq-pod.yaml
+kubectl create -f rabbitmq-console.yaml
+kubectl create -f rabbitmq-service.yaml
+```
+
 ### GKE API-Cluster
 Upload GKE yml files from
 https://github.com/nguyensjsu/fa21-172-group-7/tree/main/backend/docker
 https://github.com/nguyensjsu/fa21-172-group-7/tree/main/backend/kong
 
-Get credentials:
+Get credentials on GKE console:
 `gcloud container clusters get-credentials YOURCLUSTERHERE --zone YOURCLUSTERZONEHERE`
 ex:
 `gcloud container clusters get-credentials cluster-backend --zone us-central1-a`
 
-Execute scripts:
+Execute scripts on GKE console:
 ```
 kubectl create -f deployment.yaml 
 kubectl create -f service.yaml
