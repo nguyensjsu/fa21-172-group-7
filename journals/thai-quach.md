@@ -57,6 +57,7 @@
       * Merge and resolves conflicts from other branches into main
       * Splitting Frontend-App into FrontendOfficer and BackendOffice React apps
       * Deploy individuals offices to GKE
+      * Deploy RabbitMQ to GKE
     * Commits
       * [Resolves conflicts and merge other branches](https://github.com/nguyensjsu/fa21-172-group-7/commit/2a5a89d24988e07e107fe3a834cc82387f2a78d9)
       * [Splitting into FrontendOfficer and BackendOffice React apps](https://github.com/nguyensjsu/fa21-172-group-7/commit/67bb15371c8d3ef74711fd23d0bd1475197b91ca)
