@@ -24,7 +24,7 @@ These journals are located in the <a href="https://github.com/nguyensjsu/fa21-17
 GameGo is a platform for purchasing video games, similar to GameStop. 
 
 ### Cloud Architecture Diagram 
-![Overall Architecture Diagram of Cloud Deployment](https://user-images.githubusercontent.com/46005300/144660005-02aa2c07-199a-422b-b6e2-2ca36a548391.png)
+![image](https://user-images.githubusercontent.com/46005300/144660091-4f7f01ff-f223-4a32-90c1-4c4fe20e8010.png)
 
 ### Functional Requirements
 
