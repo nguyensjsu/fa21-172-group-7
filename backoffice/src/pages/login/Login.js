@@ -6,10 +6,20 @@ import './Login.css';
 import { useHistory } from 'react-router';
 import TextField from '@mui/material/TextField';
 
+import {
+    Routes,
+    Route ,
+    Redirect
+  } from "react-router-dom";
+
+import { useOktaAuth } from '@okta/okta-react';
+
 const bcrypt = require('bcryptjs');
 
 export default function Login() {
   // State variables
+  const { oktaAuth } = useOktaAuth();
+  const [sessionToken, setSessionToken] = useState();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
@@ -17,9 +27,12 @@ export default function Login() {
   const [severity, setSeverity] = useState('info');
   const history = useHistory();
 
+  const { authState } = useOktaAuth();
+
   // Function that is called when page is changed
   useEffect(()=>{
   });
+
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -29,67 +42,25 @@ export default function Login() {
     setPassword(e.target.value);
   }
 
-  const handleSubmit = async (e) => {
-    let hasError = true;
-    e.preventDefault();
-    if(email.length > 0 && password.length > 0){
-      try {
-        if (email == "admin@admin.com" && password == "admin") {
-          console.log("Admin logging in...");
-          localStorage.setItem('userType', 'admin');
-          localStorage.setItem('ggToken', '123abc');
-          console.log("Admin logged in");
-          hasError = false;
-          history.push('/');
-          window.location.reload();
-        } else {
-          setSeverity('info')
-          setAlertMsg('Please wait. System processing...');
-          setOpen(true);
-          setTimeout(async ()=> {
-            const payload = { email: email.toLowerCase() }
-            const res = await axios.post(api_host + '/user/login', payload, axio_header);
-            console.log(res);
-            if(res.data.error === 'false') {
-              if(bcrypt.compareSync(password, res.data.password)){
-                console.log('Passwords match');
-                hasError = false;
-                authenticateUser(email.toLowerCase());
-              } else {
-                setSeverity('error');
-                setAlertMsg('Invalid credentials. Try again!');
-                setOpen(hasError);
-              }
-            } else {
-              setSeverity('error');
-              setAlertMsg('Invalid credentials. Try again!');
-              setOpen(hasError);
-            }
-          }, 1100);
-        }
-      } catch (error) {
-        setSeverity('error');
-        setAlertMsg('Backend error occurred! Check your database.');
-        setOpen(hasError);
-        return;
-      }
-    }
-  }
 
-  const authenticateUser = async (e) => {
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(e, salt);
-    const payload = {email: e, token: hash};
-    const res = await axios.post(api_host + '/user/login/authenticateUser', payload, axio_header);
-    if(res.data.error === 'false'){
-      localStorage.setItem('userType', 'user');
-      localStorage.setItem('ggToken', hash);
-      history.push('/');
-      window.location.reload();
-    }
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    oktaAuth.signInWithCredentials({ email, password })
+    .then(res => {
+      const sessionToken = res.sessionToken;
+      setSessionToken(sessionToken);
+      oktaAuth.signInWithRedirect({ sessionToken });
+    })
+    .catch(err => console.log('Okta Sign In Error: ', err));
+  };
+
 
   return(
+    authState.isAuthenticated ?
+
+    <Redirect to={{ pathname: '/' }}/> :
+    
     <div className='Login'>
       <div className='login-container'>
         <div className='login-label'>
