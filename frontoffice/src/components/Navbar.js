@@ -33,6 +33,9 @@ export default class Navbar extends Component {
           <a href="/Payments" className="options-text">
             Payments
           </a>
+          <a href="/help" className="options-text">
+            Help
+          </a>
           <a href="/register" className="options-text">
             Register
           </a>
@@ -49,6 +52,9 @@ export default class Navbar extends Component {
           </a>
           <a href="/Payments" className="options-text">
             Payments
+          </a>
+          <a href="/help" className="options-text">
+            Help
           </a>
         </div>
       );

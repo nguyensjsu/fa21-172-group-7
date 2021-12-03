@@ -17,38 +17,8 @@ import org.springframework.amqp.support.converter.MessageConverter;
 @SpringBootApplication
 public class SpringPaymentsApplication {
 
-	/*
-	@Value("${spring.rabbitmq.host}")
-	String host;
-
-	@Value("${spring.rabbitmq.username}")
-	String username;
-
-	@Value("${spring.rabbitmq.password}")
-	String password;*/
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringPaymentsApplication.class, args);
 	}
-
-	/*
-	@Bean
-	CachingConnectionFactory connectionFactory() {
-		CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory(host);
-		cachingConnectionFactory.setUsername(username);
-		cachingConnectionFactory.setPassword(password);
-		return cachingConnectionFactory;
-	}
-	@Bean
-	public MessageConverter jsonMessageConverter() {
-		return new Jackson2JsonMessageConverter();
-	}
-	@Bean
-	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
-		final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-		rabbitTemplate.setMessageConverter(jsonMessageConverter());
-		return rabbitTemplate;
-	}*/
 
 }

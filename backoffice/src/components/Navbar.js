@@ -38,6 +38,9 @@ export default class Navbar extends Component {
           <a href="/accounts" className="options-text">
             Accounts
           </a>
+          <a href="/help" className="options-text">
+            Help
+          </a>
         </div>
       )
       :
@@ -51,6 +54,9 @@ export default class Navbar extends Component {
           </a>
           <a href="/accounts" className="options-text">
             Accounts
+          </a>
+          <a href="/help" className="options-text">
+            Help
           </a>
           <a href="/register" className="options-text">
             Register
