@@ -8,12 +8,12 @@ function Footer() {
         <div className="row">
           {/* Column1 */}
           <div className="column" style={{padding: '16px'}}>
-            <h2>CMPE 172 Group 7</h2>
+            <h4>CMPE 172 Group 7</h4>
             <h4 className="list-unstyled">
-              <li>Thai Quach</li>
-              <li>Shana Nguyen</li>
-              <li>Justin Zhu</li>
-              <li>Isla Shi</li>
+              <li><a href="https://github.com/ThaiQ">Thai Quach</a></li>
+              <li><a href="https://github.com/nguyenshana">Shana Nguyen</a></li>
+              <li><a href="https://github.com/justin-zhu1018">Justin Zhu</a></li>
+              <li><a href="https://github.com/islayshi">Isla Shi</a></li>
             </h4>
           </div>
         </div>
@@ -25,6 +25,7 @@ function Footer() {
           </p>
         </div>
       </div>
+      
     </div>
   );
 }
