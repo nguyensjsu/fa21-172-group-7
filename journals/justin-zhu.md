@@ -42,3 +42,16 @@ Each week should include:
       * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/46'>UI Changes</a>
 3. Challenges
    * There weren't really any noticeable challenges this week. I would say the next step for me would be to tackle another straightforward task. However after that, I will need to help the team figure out RabbitMQ. This is where I may start experiencing some challenges.
+
+
+## Week 3 (Dec 1 - Dec 6)
+1. Snapshot
+![jz-4](https://user-images.githubusercontent.com/25803515/144655257-f6fd0dbb-975c-4ea6-80f8-07a8cc30dbe4.png)
+
+2. Accomplishments
+   * Short week since the project is due Monday, and we start our weeks on Wednesday in the notebooks. Still, lots of accomplishemnts were made. All we really had left to do was RabbitMQ and adding a back office help desk function. Since the back office help desk function was more straight forward, I decided to work on that first. Essentially we have super secure authentication on login, where if the user doesn't correctly enter their password three times, then we lock their account and only an admin can unlock it. From there, I worked on investigating RabbitMQ. RabbitMQ was certainly quite an interesting task since our lab didn't really help us understand the pupose of the middleware. Luckily we were able to figure out at least some kind of purpose for it. Essentially, we are using Rabbit in another help desk function that we are creating. The user will be able to request for help by leaving their contact information (email, name) on the frontoffice. An admin can then view the message and respond via the email that the user left. Rabbit is used in the workflow like so: User sends message, Rabbit intercepts and responds on behalf of backend that the message was sent so that the user can move on, and then Rabbit will save the data to the DB so that admins can view it later. In other words, we are using Rabbit to make it faster on the user side by telling them the message was sent to admins (saving to DB) when it really hasn't. This way, the user doesn't have to wait for the DB query to finish before exploring the rest of our app. Everything worked fine in the end, so we're pretty much done with the app.
+   * Notable PRs
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/47'>Back Office Help Desk Function</a>
+      * <a href='https://github.com/nguyensjsu/fa21-172-group-7/pull/49'>Carrots (RabbitMQ)</a>
+3. Challenges
+   * Back Office Function was straightforward. Rabbit was certainly the most challenging thing I've faced in this project since there is very limited documentation on the particular use case that we wanted to apply Rabbit to (and also because there is just limited documentation in general). After referencing the past lab, the Rabbit documentation, and playing around with it, I was able to figure it out thankfully.
