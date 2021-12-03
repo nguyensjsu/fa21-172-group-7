@@ -14,6 +14,7 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HelpIcon from '@mui/icons-material/Help';
 // import ImageIcon from '@mui/icons-material/Image';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import Settings from '@mui/icons-material/Settings';
@@ -116,32 +117,30 @@ export default function NavbarUserButton(props) {
         </a>
       );
 
-      if (userType === 'user') {
-        if (screenSize <= 1300) { // user and small screen
-          return (
-            <div>
-              {userRoutes}
-              <Divider />
-              {logout}
-            </div>);
-        }
-        else { // user and large screen
-          return (
-            <div>
-              {logout}
-            </div>);
-        }
-      } else if (userType === 'admin'){
+      const help = (
+        <a href='/help' className='href'>
+          <MenuItem>
+            <ListItemIcon>
+              <HelpIcon fontSize="small" />
+            </ListItemIcon>
+            Help
+          </MenuItem>
+        </a>
+      );
+
+      if (userType === 'admin'){
         if (screenSize <= 1300) { // admin and small screen
           return (
             <div>
               {adminRoutes}
+              {help}
               <Divider />
               {logout}
             </div>);
         } else {
           return (
             <div>
+              {help}
               {logout}
             </div>);
         }
@@ -150,6 +149,7 @@ export default function NavbarUserButton(props) {
           return (
             <div>
               {userRoutes}
+              {help}
               <Divider />
               {register}
               {login}
@@ -158,6 +158,8 @@ export default function NavbarUserButton(props) {
         else { // user and large screen
           return (
             <div>
+              {help}
+              <Divider />
               {register}
               {login}
             </div>);

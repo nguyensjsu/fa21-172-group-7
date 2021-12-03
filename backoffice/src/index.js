@@ -20,6 +20,7 @@ import Error from './pages/error/Error';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import Logout from './pages/Logout';
+import Help from './pages/helpAdmin/Help';
 
 //User: register, login, browse, payments
 //Admin: inventory, transactions, accounts
@@ -34,6 +35,7 @@ const routing = (
         <AdminRoute exact path="/inventory" component={Inventory} />
         <AdminRoute exact path="/transactions" component={Transactions} />
         <AdminRoute exact path="/accounts" component={Accounts} />
+        <AdminRoute exact path="/help" component={Help} />
         <Route exact path="/error" component={Error} />
         <PublicRoute exact path="/register" component={Register} />
         <PublicRoute exact path="/login" component={Login} />

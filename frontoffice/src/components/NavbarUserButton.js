@@ -14,6 +14,7 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HelpIcon from '@mui/icons-material/Help';
 // import ImageIcon from '@mui/icons-material/Image';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import Settings from '@mui/icons-material/Settings';
@@ -54,35 +55,6 @@ export default function NavbarUserButton(props) {
         </React.Fragment>
       );
 
-      const adminRoutes = (
-        <React.Fragment>
-          <a href='/inventory' className='href'>
-            <MenuItem>
-              <ListItemIcon>
-                <InventoryIcon fontSize="small" />
-              </ListItemIcon>
-              Inventory
-            </MenuItem>
-          </a>
-          <a href='/transactions' className='href'>
-            <MenuItem>
-              <ListItemIcon>
-                <ReceiptIcon fontSize="small" />
-              </ListItemIcon>
-              Transactions
-            </MenuItem>
-          </a>
-          <a href='/accounts' className='href'>
-            <MenuItem>
-              <ListItemIcon>
-                <AdminPanelSettingsIcon fontSize="small" />
-              </ListItemIcon>
-              Accounts
-            </MenuItem>
-          </a>
-        </React.Fragment>
-      );
-
       const logout = (
         <a href='/logout' className='href'>
           <MenuItem>
@@ -115,12 +87,24 @@ export default function NavbarUserButton(props) {
           </MenuItem>
         </a>
       );
+      
+      const help = (
+        <a href='/help' className='href'>
+          <MenuItem>
+            <ListItemIcon>
+              <HelpIcon fontSize="small" />
+            </ListItemIcon>
+            Help
+          </MenuItem>
+        </a>
+      );
 
       if (userType === 'user') {
         if (screenSize <= 1300) { // user and small screen
           return (
             <div>
               {userRoutes}
+              {help}
               <Divider />
               {logout}
             </div>);
@@ -128,20 +112,7 @@ export default function NavbarUserButton(props) {
         else { // user and large screen
           return (
             <div>
-              {logout}
-            </div>);
-        }
-      } else if (userType === 'admin'){
-        if (screenSize <= 1300) { // admin and small screen
-          return (
-            <div>
-              {adminRoutes}
-              <Divider />
-              {logout}
-            </div>);
-        } else {
-          return (
-            <div>
+              {help}
               {logout}
             </div>);
         }
@@ -150,6 +121,7 @@ export default function NavbarUserButton(props) {
           return (
             <div>
               {userRoutes}
+              {help}
               <Divider />
               {register}
               {login}
@@ -158,6 +130,8 @@ export default function NavbarUserButton(props) {
         else { // user and large screen
           return (
             <div>
+              {help}
+              <Divider />
               {register}
               {login}
             </div>);

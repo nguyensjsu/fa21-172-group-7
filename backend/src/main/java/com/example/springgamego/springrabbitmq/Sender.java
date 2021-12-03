@@ -14,24 +14,14 @@ public class Sender {
     @Autowired
     private Queue queue;
 
-    AtomicInteger dots = new AtomicInteger(0);
-
-    AtomicInteger count = new AtomicInteger(0);
-
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
-    public void send() {
-        StringBuilder builder = new StringBuilder("Hello");
-        if (dots.incrementAndGet() == 4) {
-            dots.set(1);
-        }
-        for (int i = 0; i < dots.get(); i++) {
-            builder.append('.');
-        }
-        builder.append(count.incrementAndGet());
-        String message = builder.toString();
-        template.convertAndSend(queue.getName(), message);
-        System.out.println(" [x] Sent '" + message + "'");
+    @Autowired
+    public Sender(RabbitTemplate template) {
+        this.template = template;
     }
 
+    public void send(String message) {
+        template.convertAndSend(queue.getName(), message);
+        System.out.println(queue);
+    }
 }
 

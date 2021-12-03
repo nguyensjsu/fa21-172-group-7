@@ -8,7 +8,6 @@ import Footer from './components/Footer.js';
 // Route Types
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
-import AdminRoute from './routes/AdminRoute';
 
 // Pages
 import App from './pages/homepage/App';
@@ -19,6 +18,7 @@ import Error from './pages/error/Error';
 import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import Logout from './pages/Logout';
+import Help from './pages/help/Help';
 
 //User: register, login, browse, payments
 //Admin: inventory, transactions, accounts
@@ -31,6 +31,7 @@ const routing = (
         <Route exact path="/" component={HomePage} />
         <Route exact path="/ping" component={App} />
         <Route exact path="/browse" component={Browse} />
+        <Route exact path="/help" component={Help} />
         <PrivateRoute exact path="/payments" component={Payments} />
         <Route exact path="/error" component={Error} />
         <PublicRoute exact path="/register" component={Register} />
