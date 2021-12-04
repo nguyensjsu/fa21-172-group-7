@@ -13,7 +13,6 @@ import Inventory from './pages/inventory/Inventory';
 import Transactions from './pages/transactions/Transactions';
 import Accounts from './pages/accounts/Accounts';
 import Error from './pages/error/Error';
-import Register from './pages/register/Register';
 import Login from './pages/login/Login';
 import Logout from './pages/Logout';
 import Help from './pages/helpAdmin/Help';

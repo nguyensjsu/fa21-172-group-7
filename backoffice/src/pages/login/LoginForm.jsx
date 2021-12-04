@@ -95,9 +95,6 @@ export default function LoginForm() {
           />
           <button className='login-btn' onClick={handleSubmit}>Login</button>
         </form>
-        <div className='not-member'>
-          Not a member? <a href='/register'>Register now!</a>
-        </div>
       </div>
     </div>
   )

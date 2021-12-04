@@ -10,21 +10,8 @@ export default function HomePage() {
 
   const { authState } = useOktaAuth();
 
-  // function call_UserAPI() {
-  //   if(localStorage.getItem('userType') !== 'admin'){
-  //     localStorage.setItem('userType', '');
-  //     localStorage.setItem('ggToken', '');
-  //   }
-  // }
-
-  // useEffect(()=>{
-  //   call_UserAPI()
-  //   console.log("View in browser's developer console!");
-  // }, []);
-
   return (
     
-
   <div>
 
     {authState ? 
