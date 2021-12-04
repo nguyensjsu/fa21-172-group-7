@@ -44,7 +44,6 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 
 - Frontend 
     - React JS
-    - Okta Authentication
 
 - Backend
     - Spring
@@ -55,6 +54,12 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 
 - JDK 11
 - Gradle 5.6
+
+
+### Extra Credit
+
+- Okta Authentication
+- MySQL Cloud Database
 
 
 ## Download Dependencies
@@ -198,5 +203,4 @@ Has the same steps as deploying Backend-Spring:
 4. `docker push YourDockerRepo`
 5. Uploads [deployment.yml](https://github.com/nguyensjsu/fa21-172-group-7/tree/gke/frontend/kuber) to GKE and create a pod and expose it with service.
 
-### RabbitMQ Deployment 
 
