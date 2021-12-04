@@ -55,7 +55,9 @@ export default function LoginForm() {
       setSessionToken(sessionToken);
       oktaAuth.signInWithRedirect({ sessionToken });
       // localStorage.setItem('userType', 'admin');
-      history.push('/');
+      setTimeout(()=>{
+        history.push('/');
+      }, 1000);
     })
     .catch(err => {
       console.log('Okta Sign In Error: ', err)

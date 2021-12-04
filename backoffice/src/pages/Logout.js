@@ -31,7 +31,7 @@ export default function Logout() {
 
   });
 
-  const style = { textAlign: 'center', margin: '5%' }
+  const style = { textAlign: 'center', margin: '5%', minHeight: '100vh'}
 
   return (
     authState ? 
