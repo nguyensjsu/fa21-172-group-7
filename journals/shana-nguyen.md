@@ -72,6 +72,8 @@ Each week should include:
 ### Accomplishments:
 1. [Okta Auth](https://github.com/nguyensjsu/fa21-172-group-7/issues/48)
 - Added okta authentication for the back office; blocking certain pages and allowing public pages
+2. [Functional & Technical Requirements PR](URL "https://github.com/nguyensjsu/fa21-172-group-7/pull/8")
+- Added more functional and technical requirements as well as dependencies
 
 
 ### Challenges:
