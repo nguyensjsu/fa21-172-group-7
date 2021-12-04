@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Route Types
@@ -43,7 +42,6 @@ import OktaRouting from './OktaRouting';
 const routing = (
   <Router>
     <div>
-      <Navbar />
       <OktaRouting />
       <Footer />
     </div>

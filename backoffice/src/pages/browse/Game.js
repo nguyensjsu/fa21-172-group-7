@@ -7,7 +7,7 @@ import '../payments/Payments.js';
 import Button from '@mui/material/Button';
 import {Redirect} from 'react-router-dom';
 
-
+import AdminNavbar from '../../components/AdminNavbar';
 
 export default function Game(props) {
   // State variables
@@ -36,11 +36,14 @@ export default function Game(props) {
 
 
   return(
+    <div>
+      <AdminNavbar />
       <CardWithImage 
         title={props.game.name + " ($" + props.game.price + ")"} 
         text={props.game.description} 
         buttonLabel={cartState} 
         buttonAction={addToCart}
         className="Game" />
+    </div>
   );
 }

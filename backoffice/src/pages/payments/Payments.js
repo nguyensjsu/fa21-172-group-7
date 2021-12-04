@@ -10,6 +10,8 @@ import { useHistory } from 'react-router-dom'
 import ShoppingCart from './ShoppingCart.js';
 
 import Footer from '../../components/Footer.js';
+import AdminNavbar from '../../components/AdminNavbar';
+import NotLoggedInNavbar from '../../components/NotLoggedInNavbar';
 
 export default function Payments(props) {
 
@@ -295,70 +297,80 @@ export default function Payments(props) {
   }
 
   return (
-    <div className='Payments'>
+    <div>
 
-      <ShoppingCart/>
-      
-      <p id="payment-error-msg" >{msg? msg:""}</p>
+      {authState ? 
+          authState.isAuthenticated ?
+            <AdminNavbar />:
+            <NotLoggedInNavbar /> :
+        <NotLoggedInNavbar />
+        
+      }
+      <div className='Payments'>
 
-      <Box
-        m={5} pt={3}
-        component="form"
-        sx={{
-          '& .MuiTextField-root': { m: 3, width: '20vw' },
-        }}
-        noValidate
-        autoComplete="off"
-      >
+        <ShoppingCart/>
+        
+        <p id="payment-error-msg" >{msg? msg:""}</p>
 
-        <h1>Complete Your Purchase</h1>
+        <Box
+          m={5} pt={3}
+          component="form"
+          sx={{
+            '& .MuiTextField-root': { m: 3, width: '20vw' },
+          }}
+          noValidate
+          autoComplete="off"
+        >
 
-        <h3>Personal Info</h3>
+          <h1>Complete Your Purchase</h1>
 
-        <div>
-          {personel_form.map((element, ind) => {
-            return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
-          })}
-        </div>
+          <h3>Personal Info</h3>
 
-        <h3>Location Info</h3>
+          <div>
+            {personel_form.map((element, ind) => {
+              return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
+            })}
+          </div>
 
-        <div>
-          {address_form.map((element, ind) => {
-            return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
-          })}
-        </div>
+          <h3>Location Info</h3>
 
-        <h3>Card Info</h3>
+          <div>
+            {address_form.map((element, ind) => {
+              return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
+            })}
+          </div>
 
-        <div>
-          {card_form.map((element, ind) => {
-            return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
-          })}
-        </div>
+          <h3>Card Info</h3>
 
-        <Button disabled={disbutton} style={{ float: "right", marginRight: "20vw" }} variant="contained" onClick={() => { payProcess() }}>Pay Now!</Button>
+          <div>
+            {card_form.map((element, ind) => {
+              return <TextField key={ind} error={element.error} label={element.label} helperText={element.helperText ? "Required: " + element.helperText : "Required"} onChange={element.change} />
+            })}
+          </div>
 
-      </Box>
+          <Button disabled={disbutton} style={{ float: "right", marginRight: "20vw" }} variant="contained" onClick={() => { payProcess() }}>Pay Now!</Button>
 
-      <Footer />
-
-      <Modal
-        open={modal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        id="payments-modal"
-      >
-        <Box id="payments-modal-box">
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Success Paying
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Thank you for Shopping!
-          </Typography>
-          <Button id="payments-modal-button" variant="contained" onClick={() => { history.push("/"); }}>Done</Button>
         </Box>
-      </Modal>
+
+        <Footer />
+
+        <Modal
+          open={modal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          id="payments-modal"
+        >
+          <Box id="payments-modal-box">
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Success Paying
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              Thank you for Shopping!
+            </Typography>
+            <Button id="payments-modal-button" variant="contained" onClick={() => { history.push("/"); }}>Done</Button>
+          </Box>
+        </Modal>
+      </div>
     </div>
   );
 }

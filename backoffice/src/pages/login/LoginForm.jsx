@@ -54,7 +54,7 @@ export default function LoginForm() {
       const sessionToken = res.sessionToken;
       setSessionToken(sessionToken);
       oktaAuth.signInWithRedirect({ sessionToken });
-      localStorage.setItem('userType', 'admin');
+      // localStorage.setItem('userType', 'admin');
       history.push('/');
     })
     .catch(err => {

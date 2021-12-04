@@ -6,6 +6,9 @@ import './Login.css';
 import { useHistory } from 'react-router';
 import TextField from '@mui/material/TextField';
 
+import AdminNavbar from '../../components/AdminNavbar';
+import NotLoggedInNavbar from '../../components/NotLoggedInNavbar';
+
 import { useOktaAuth } from '@okta/okta-react';
 
 import LoginForm from './LoginForm'
@@ -35,7 +38,7 @@ export default function Login() {
   useEffect(()=>{
     console.log("AUTH STATE = ", authState);
     // console.log("OKTA AUTH = ", oktaAuth);
-  });
+  }, []);
 
 
   const style = { textAlign: 'center', margin: '5%' }
@@ -45,10 +48,20 @@ export default function Login() {
     authState ? 
     (
       authState.isAuthenticated ?
-      ( <h1 style={style}>You are logged in!</h1> ):
-
-      <LoginForm />
+       <div>
+          <AdminNavbar />
+          <h1 style={style}>You are logged in!</h1>
+        </div> 
+      :
+      <div>
+        <NotLoggedInNavbar />
+        <LoginForm />
+      </div>
     ) :
-    <LoginForm />
+
+    <div>
+      <NotLoggedInNavbar />
+      <LoginForm />
+    </div>
   )
 }

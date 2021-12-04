@@ -43,6 +43,7 @@ const OktaRouting = () => {
       <SecureRoute path='/transactions' component={Transactions} />
       <SecureRoute path='/accounts' component={Accounts} />
       <SecureRoute path="/help" exact={true} component={Help} />
+      <Route path='/error' component={Error} />
       <Route path='/login' render={() => <Login />} />
       <Route path='/login/callback' component={LoginCallback} />
       <Route exact path="/logout" component={Logout} />

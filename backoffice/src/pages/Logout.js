@@ -19,14 +19,14 @@ export default function Logout() {
     setTimeout(async ()=>{
       if(authState !== null) {
         if(authState.isAuthenticated) {
-          localStorage.setItem('userType', '');
+          // localStorage.setItem('userType', '');
           console.log("admin signing out")
           await oktaAuth.signOut();
           // history.push('/');
           // window.location.reload();
         }
       }
-    },5000);
+    },3000);
     
 
   });

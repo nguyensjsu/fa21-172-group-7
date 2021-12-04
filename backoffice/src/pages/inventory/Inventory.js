@@ -5,6 +5,8 @@ import ColumnGroupingTable from '../../components/ColumnGroupingTable';
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env'
 
+import AdminNavbar from '../../components/AdminNavbar';
+
 export default function Inventory() {
   // State variables
   const [games, setGames] = useState([]);
@@ -67,9 +69,12 @@ export default function Inventory() {
 
 
   return(
-    <div className='Inventory'>
-      <h1>Inventory</h1>
-        <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Games" />
+    <div>
+      <AdminNavbar />
+      <div className='Inventory'>
+        <h1>Inventory</h1>
+          <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Games" />
+      </div>
     </div>
   );
 }
