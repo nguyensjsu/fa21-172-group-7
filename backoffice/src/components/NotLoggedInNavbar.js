@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './Navbar.css';
 import Input from "./Input";
-import NavbarUserButton from "./NavbarUserButton";
 
 import { useOktaAuth } from '@okta/okta-react';
 
