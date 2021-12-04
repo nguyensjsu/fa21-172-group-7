@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env'
 
+import AdminNavbar from '../../components/AdminNavbar';
+
 export default function Help() {
   const [requests, setRequests] = useState([]);
 
@@ -82,9 +84,12 @@ export default function Help() {
   ]
 
   return(
-    <div className='Accounts'>
-      <h1>Help</h1>
-      <ColumnGroupingTable columns={columns} rows={rows} title="User Help Requests" />
+    <div>
+      <AdminNavbar />
+      <div className='Accounts'>
+        <h1>Help</h1>
+        <ColumnGroupingTable columns={columns} rows={rows} title="User Help Requests" />
+      </div>
     </div>
   );
 }

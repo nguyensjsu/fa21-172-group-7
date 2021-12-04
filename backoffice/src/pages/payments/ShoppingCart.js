@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import './ShoppingCart.css';
 import ColumnGroupingTable from '../../components/ColumnGroupingTable';
+import AdminNavbar from '../../components/AdminNavbar';
+import NotLoggedInNavbar from '../../components/NotLoggedInNavbar';
 
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env'
 
+import { useOktaAuth } from '@okta/okta-react';
+
 export default function ShoppingCart() {
   // State variables
+  const { authState } = useOktaAuth();
   const [games, setGames] = useState([]);
   const [rows, setRows] = useState([]);
 
@@ -56,9 +61,18 @@ export default function ShoppingCart() {
 
 
   return(
-    <div className='ShoppingCart'>
-      <h1>Shopping Cart</h1>
-        <ColumnGroupingTable columns={columns} rows={rows} title="Shopping Cart" />
+    <div>
+      {authState ? 
+          authState.isAuthenticated ?
+            <AdminNavbar />:
+            <NotLoggedInNavbar /> :
+        <NotLoggedInNavbar />
+        
+      }
+      <div className='ShoppingCart'>
+        <h1>Shopping Cart</h1>
+          <ColumnGroupingTable columns={columns} rows={rows} title="Shopping Cart" />
+      </div>
     </div>
   );
 }

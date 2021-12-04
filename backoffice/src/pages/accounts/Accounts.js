@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env'
 
+import AdminNavbar from '../../components/AdminNavbar';
+
 export default function Accounts() {
   // State variables
   const [example, setExample] = useState('EX');
@@ -78,9 +80,12 @@ export default function Accounts() {
 
 
   return(
-    <div className='Accounts'>
-      <h1>Accounts</h1>
-        <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Accounts" />
-    </div>
+    <div>
+      <AdminNavbar />
+      <div className='Accounts'>
+        <h1>Accounts</h1>
+          <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Accounts" />
+      </div>
+    </div>  
   );
 }

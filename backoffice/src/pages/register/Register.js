@@ -6,10 +6,16 @@ import { api_host, axio_header } from '../proxy_env';
 import './Register.css';
 import { useHistory } from 'react-router';
 
+import AdminNavbar from '../../components/AdminNavbar';
+import NotLoggedInNavbar from '../../components/NotLoggedInNavbar';
+
+import { useOktaAuth } from '@okta/okta-react';
+
 const bcrypt = require('bcryptjs');
 
 export default function Register() {
   // State variables
+  const { authState } = useOktaAuth();
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [emailHelper, setEmailHelper] = useState('');
@@ -93,40 +99,49 @@ export default function Register() {
   }
 
   return(
-    <div className='Register'>
-      <div className='register-container'>
-        <div className='register-label'>
-          Register Form
-        </div>
-        <AlertCustom
-          style={{marginBottom: '16px'}}
-          open={open}
-          setOpen={setOpen}
-          severity={severity}
-          message={alertMsg}
-        />
-        <form onSubmit={handleSubmit}>
-          <TextField
-            style={{width: '100%'}}
-            error={emailError}
-            label={'Email Address'}
-            helperText={emailHelper ? emailHelper : ''}
-            onChange={handleEmail}
+    <div>
+      {authState ? 
+        authState.isAuthenticated ?
+          <AdminNavbar />:
+          <NotLoggedInNavbar /> :
+      <NotLoggedInNavbar />
+      }
+
+      <div className='Register'>
+        <div className='register-container'>
+          <div className='register-label'>
+            Register Form
+          </div>
+          <AlertCustom
+            style={{marginBottom: '16px'}}
+            open={open}
+            setOpen={setOpen}
+            severity={severity}
+            message={alertMsg}
           />
-          <div className='spacer'/>
-          <TextField
-            style={{width: '100%', fontSize: '16px'}}
-            id="outlined-password-input"
-            type='password'
-            error={passwordError}
-            label='Password'
-            helperText={passwordHelper ? passwordHelper : ''}
-            onChange={handlePassword}
-          />
-          <button className='register-btn' onClick={handleSubmit}>Register</button>
-        </form>
-        <div className='not-member'>
-          Already a member? <a href='/login'>Log in.</a>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              style={{width: '100%'}}
+              error={emailError}
+              label={'Email Address'}
+              helperText={emailHelper ? emailHelper : ''}
+              onChange={handleEmail}
+            />
+            <div className='spacer'/>
+            <TextField
+              style={{width: '100%', fontSize: '16px'}}
+              id="outlined-password-input"
+              type='password'
+              error={passwordError}
+              label='Password'
+              helperText={passwordHelper ? passwordHelper : ''}
+              onChange={handlePassword}
+            />
+            <button className='register-btn' onClick={handleSubmit}>Register</button>
+          </form>
+          <div className='not-member'>
+            Already a member? <a href='/login'>Log in.</a>
+          </div>
         </div>
       </div>
     </div>

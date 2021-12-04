@@ -1,21 +1,40 @@
 import React, {useEffect} from "react";
 import './Homepage.css'
 
+import AdminNavbar from '../../components/AdminNavbar';
+import NotLoggedInNavbar from '../../components/NotLoggedInNavbar';
+
+import { useOktaAuth } from '@okta/okta-react';
+
 export default function HomePage() {
 
-  function call_UserAPI() {
-    if(localStorage.getItem('userType') !== 'admin'){
-      localStorage.setItem('userType', '');
-      localStorage.setItem('ggToken', '');
-    }
-  }
+  const { authState } = useOktaAuth();
 
-  useEffect(()=>{
-    call_UserAPI()
-    console.log("View in browser's developer console!");
-  }, []);
+  // function call_UserAPI() {
+  //   if(localStorage.getItem('userType') !== 'admin'){
+  //     localStorage.setItem('userType', '');
+  //     localStorage.setItem('ggToken', '');
+  //   }
+  // }
+
+  // useEffect(()=>{
+  //   call_UserAPI()
+  //   console.log("View in browser's developer console!");
+  // }, []);
 
   return (
+    
+
+  <div>
+
+    {authState ? 
+        authState.isAuthenticated ?
+          <AdminNavbar />:
+          <NotLoggedInNavbar /> :
+      <NotLoggedInNavbar />
+      
+    }
+
     <div className='HomePage'>
       <div className='main-component'>
         <div className='title'>
@@ -26,5 +45,6 @@ export default function HomePage() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
