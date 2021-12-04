@@ -25,7 +25,7 @@ const OktaRouting = () => {
   };
 
   const oktaAuth = new OktaAuth({
-    issuer: 'https://dev-75891639.okta.com',
+    issuer: 'https://dev-75891639.okta.com/oauth2/default',
     clientId: '0oa2xuubevEusmTBg5d7',
     redirectUri: window.location.origin + '/login/callback',
     onAuthRequired: onAuthRequired,
@@ -42,8 +42,10 @@ const OktaRouting = () => {
       <SecureRoute path='/inventory' component={Inventory} />
       <SecureRoute path='/transactions' component={Transactions} />
       <SecureRoute path='/accounts' component={Accounts} />
+      <SecureRoute path="/help" exact={true} component={Help} />
       <Route path='/login' render={() => <Login />} />
       <Route path='/login/callback' component={LoginCallback} />
+      <Route exact path="/logout" component={Logout} />
     </Security>
   );
 };

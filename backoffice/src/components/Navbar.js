@@ -11,13 +11,19 @@ export default class Navbar extends Component {
     }
   }
 
-  handleSwitch = () => {
-    if(this.state.userType === 'user'){
-      this.setState({userType: 'admin'});
-    } else {
-      this.setState({userType: 'user'});
-    }   
-  }
+  // handleSwitch = () => {
+  //   if(this.state.userType === 'user'){
+  //     this.setState({userType: 'admin'});
+  //   } else {
+  //     this.setState({userType: 'user'});
+  //   }   
+  // }
+
+
+  // For the second part of adminNavbarOptions
+  // <a href="/register" className="options-text">
+  //   Register
+  // </a>
 
   render() {
     let userType = ''
@@ -41,26 +47,15 @@ export default class Navbar extends Component {
           <a href="/help" className="options-text">
             Help
           </a>
+          <a href="/logout" className="options-text">
+            Log Out
+          </a>
         </div>
       )
       :
       (
         <div className="navbar-options">
-          <a href="/inventory" className="options-text">
-            Inventory
-          </a>
-          <a href="/transactions" className="options-text">
-            Transactions
-          </a>
-          <a href="/accounts" className="options-text">
-            Accounts
-          </a>
-          <a href="/help" className="options-text">
-            Help
-          </a>
-          <a href="/register" className="options-text">
-            Register
-          </a>
+          
           <a href="/login" className="options-text">
             Login
           </a>
