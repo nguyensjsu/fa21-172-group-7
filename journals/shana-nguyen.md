@@ -67,7 +67,7 @@ Each week should include:
 
 ## Week 4 (Dec 1 - Dec 6)
 
-![Board Week 4](images/.png)
+![Board Week 4](images/sn-4.png)
 
 ### Accomplishments:
 1. [Okta Auth](https://github.com/nguyensjsu/fa21-172-group-7/issues/48)
