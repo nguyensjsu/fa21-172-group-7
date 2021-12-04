@@ -3,8 +3,9 @@
 ## Step-by-Step Setup for Application
 1. Clone the application to local (i.e. `git clone https://github.com/nguyensjsu/fa21-172-group-7.git`).
 2. Make sure <a href="https://nodejs.org/en/download/">Node.js</a> is installed.
-3. Install node dependencies for React frontend by `cd frontend` and `npm install`. 
-4. You're done!
+3. Install node dependencies for React front office by `cd frontoffice` and `npm install`.
+4. Install node dependencies for React back office by `cd backoffice` and `npm install`. 
+5. You're done!
 
 ## Individual Team Member Journals
 These journals will include the following contents as per the project requirements:
@@ -61,12 +62,14 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 - Okta Authentication
 - MySQL Cloud Database
 
-
-## Download Dependencies
-
-- Material UI Icons: `npm install @material-ui/core`
-- Bcrypt: `npm install bcrypt` (if need to run `npm audit fix`, do so in the frontend folder)
-
+## Useful Scripts
+```
+// Found in package.json of base directory
+npm run backend // Runs Spring Backend, SQL, Kong, Rabbit on Docker
+npm run fo // Runs frontoffice web app
+npm run bo // Runs backoffice web app
+npm run clean-all // Stop and remove Spring Backend, SQL, Kong, Rabbit Docker Images
+```
 
 ## Commands to Run React Frontend
 ```
