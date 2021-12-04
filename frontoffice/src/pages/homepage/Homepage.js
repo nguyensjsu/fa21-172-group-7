@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env';
 import './Homepage.css'
@@ -35,6 +35,9 @@ export default function HomePage() {
         <div className='subtitle'>
           We sell games and stuff. Mostly just games for now.
         </div>
+        <h4>Welcome!</h4>
+            <p> Hello! We are a group of software engineering students. Please enjoy this demo of our project for CMPE172 at SJSU. </p>
+      
       </div>
     </div>
   );
