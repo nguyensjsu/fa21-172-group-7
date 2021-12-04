@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Transactions.css';
 
 import ColumnGroupingTable from '../../components/ColumnGroupingTable';
+import AdminNavbar from '../../components/AdminNavbar';
 
 import axios from 'axios';
 import { api_host, axio_header } from '../proxy_env'
@@ -75,9 +76,12 @@ export default function Transactions() {
 
 
   return(
-    <div className='Transactions'>
-      <h1>Transactions</h1>
-      <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Transactions" />
+    <div>
+      <AdminNavbar />
+      <div className='Transactions'>
+        <h1>Transactions</h1>
+        <ColumnGroupingTable columns={columns} rows={rows} title="GameGo Transactions" />
+      </div>
     </div>
   );
 }

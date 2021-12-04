@@ -28,16 +28,23 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 
 ### Functional Requirements
 
-- Video games can be seen and selected for purchase
-- User can purchase a video game with a credit card
-- Transactions are recorded and viewable
-- Game inventory can be accessed and the number of remaining games can be viewed
+- User tasks:
+    - Can register for an account, log in, and log out
+    - Video games can be seen and selected for purchase
+    - User can purchase a video game with a credit card
+- Admin tasks:
+    - Game inventory can be accessed and the number of remaining games can be viewed
+    - Previous transactions' information can be seen
+    - List of user accounts can be seen
+        - If a user is locked out of their account by too many log in attempts, admin can unlock them
+    - Help inquiries sent in by the user can be seen
 
 
 ### Technical Requirements
 
 - Frontend 
     - React JS
+    - Okta Authentication
 
 - Backend
     - Spring
@@ -48,6 +55,13 @@ GameGo is a platform for purchasing video games, similar to GameStop.
 
 - JDK 11
 - Gradle 5.6
+
+
+## Download Dependencies
+
+- Material UI Icons: `npm install @material-ui/core`
+- Bcrypt: `npm install bcrypt` (if need to run `npm audit fix`, do so in the frontend folder)
+
 
 ## Commands to Run React Frontend
 ```

@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
 import Footer from '../../components/Footer.js';
+import AdminNavbar from '../../components/AdminNavbar';
+
 
 export default function Browse() {
   // State variables
@@ -46,35 +48,39 @@ export default function Browse() {
 
 
   return(
-    <div className='Browse'>
-      <h1>Browse Games</h1>
+    <div>
+      <AdminNavbar />
+      <div className='Browse'>
+        <h1>Browse Games</h1>
 
-        {games.map( (game,index) => (
-            <div key={index} className="game">
-              <Game game={game} parentCallback={callback}/>
-            </div>
-        ))}
+          {games.map( (game,index) => (
+              <div key={index} className="game">
+                <Game game={game} parentCallback={callback}/>
+              </div>
+          ))}
 
-      <Modal
-        open={modal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        id="cart-modal"
-      >
-        <Box id="cart-modal-box">
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Game added to cart!
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            You can only pay for one game at a time.
-          </Typography>
-          <Button id="cart-modal-button" variant="contained" onClick={() => { history.push("/Payments"); }}>Go to Payments Page</Button>
-        </Box>
-      </Modal>
+        <Modal
+          open={modal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          id="cart-modal"
+        >
+          <Box id="cart-modal-box">
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Game added to cart!
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              You can only pay for one game at a time.
+            </Typography>
+            <Button id="cart-modal-button" variant="contained" onClick={() => { history.push("/Payments"); }}>Go to Payments Page</Button>
+          </Box>
+        </Modal>
 
-      <Footer />
+        <Footer />
 
-    </div>
+      </div>
+
+  </div>
 
 
   );
