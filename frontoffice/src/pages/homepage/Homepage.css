@@ -3,7 +3,7 @@
 }
 
 .HomePage .main-component {
-  border-bottom: 1.5px solid #c4c4c4;
+  /*border-bottom: 1.5px solid #c4c4c4;*/
   padding: 48px;
   text-align: center;
   font-family: 'DM Sans', sans-serif;
@@ -29,4 +29,17 @@
 .HomePage .main-component .buttons {
   padding: 10px;
   /* margin: auto; */
+}
+
+.HomePage .main-component .banner{
+  width:100%
+}
+
+img {
+  padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    /*<img className='banner' src={"https://wallpapercave.com/wp/wp7549162.jpg"} alt="Logo" /> ––>*/
 }

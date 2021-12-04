@@ -35,9 +35,9 @@ export default function HomePage() {
         <div className='subtitle'>
           We sell games and stuff. Mostly just games for now.
         </div>
+        <img src={'https://lh3.googleusercontent.com/proxy/Zm_dUjhEe3lxb2KQr4u01gO-ge-o9prmBiTU4Sc-DFd-sSGt1iCpfa_wJjZm-9nZ-LYNzNunc6vJydRL-clbCgCoOw'}/>
         <h4>Welcome!</h4>
             <p> Hello! We are a group of software engineering students. Please enjoy this demo of our project for CMPE172 at SJSU. </p>
-      
       </div>
     </div>
   );
