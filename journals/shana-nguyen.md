@@ -70,8 +70,14 @@ Each week should include:
 ![Board Week 4](images/.png)
 
 ### Accomplishments:
-
+1. [Okta Auth](https://github.com/nguyensjsu/fa21-172-group-7/issues/48)
+- Added okta authentication for the back office; blocking certain pages and allowing public pages
 
 
 ### Challenges:
+- Didn't know how to use Okta, and the tutorial instructions were incomplete; Had to google around and read up on how others used it
+- Ran into errors like `Attempted import error: 'useRouteMatch' is not exported from 'react-router-dom'.`; fixed this by using the correct versions
+- Couldn't log in nor log out; fixed this by having the correct parameter names and logging out using Okta's sign-out redirect URL
+- Had difficulty accessing the authState from Okta, and the error messages were vague; I tried a different browser which had better error messages, and turns out that it can only be accessible in pages that are in the <Security> tag in OktaRouting, so I added the Navbar to each page
+
 
