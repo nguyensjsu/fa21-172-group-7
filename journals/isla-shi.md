@@ -36,4 +36,13 @@ Unfortunately I was not able to center the columns or get them to be formatted l
 ## Week 3 (Nov 24 - Nov 30)
 Added RabbitMQ to the mix, I did end up reusing a majority of my code given from Lab 9: RabbitMQ. It originally took a couple tries to get it working but after some renaming and carefully deciding what was needed, I got it to compile at the very least. 
 
+![image](https://user-images.githubusercontent.com/46005300/144909690-246abd3b-d118-4a45-987a-9b45231eddd8.png)
+
+I made a separate file holding all the RabbitMQ code and setup, and one reason why it would not originally compile was because I had to manually add the dependecy. When generating Spring projects, you can add certain dependencies, but I eventually figured out that whoever in my team generated this first did not have RabbtiMQ in mind. As a result I had to go into the build.gradle source file to manually the dependency. 
+
+`testImplementation 'org.springframework.amqp:spring-rabbit-test'`
+
+![image](https://user-images.githubusercontent.com/46005300/144915635-b5696907-2b03-4436-8604-591ec5c302a8.png)
+
+
 ## Week 4 (Dec 1 - )
