@@ -8,8 +8,9 @@ Each week should include:
 
 ## Week 1 (Nov 12 - Nov 17)
 
+
 ## Week 2 (Nov 18 - Nov 23)
 Messed around the the front end (finish this)
 
 ## Week 3 (Nov 24 - Nov 30)
-Added RabbitMQ to the mix (add screenshots)
+Added RabbitMQ to the mix, I did end up reusing a majority of my code given from Lab 9: RabbitMQ. It originally took a couple tries to get it working but after some renaming and carefully deciding what was needed, I got it to compile at the very least. 
