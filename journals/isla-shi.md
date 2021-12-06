@@ -46,3 +46,8 @@ I made a separate file holding all the RabbitMQ code and setup, and one reason w
 
 
 ## Week 4 (Dec 1 - )
+
+Made the cloud architecture diagram, as a part of the requirements. Link to the Lucidchart edit can be found here: https://lucid.app/lucidchart/a45fd2ae-2b7f-47ef-9027-b2a67fc748f1/edit?viewport_loc=-344%2C235%2C1240%2C577%2C0_0&invitationId=inv_d123a33f-a130-4779-8608-9ac95ed2b50a 
+
+![image](https://user-images.githubusercontent.com/46005300/144915892-d5494ac9-2270-46ea-a45a-5a8e882e8858.png)
+
