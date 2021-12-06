@@ -51,3 +51,10 @@ Made the cloud architecture diagram, as a part of the requirements. Link to the 
 
 ![image](https://user-images.githubusercontent.com/46005300/144915892-d5494ac9-2270-46ea-a45a-5a8e882e8858.png)
 
+At this point, frontend is known as two parts, frontoffice (for customers) and backoffice (for employees/admin), so we technically have to frontend office app pointing to the Kong API. 
+
+Kong then points to backend Spring, which reads from GCP MySQL, Cybersource, and RabbitMQ. 
+
+According to Shana, Okta office communicates with the backoffice. The diagram above in the final version and on Lucidchart for any further editing. A copy can also be found in the entire repository's Readme.
+
+
